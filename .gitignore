@@ -3,3 +3,4 @@ node_modules
 db.json
 public
 themes
+debug.log

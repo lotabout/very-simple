@@ -11,7 +11,7 @@ This test doesn't contain the default theme. You have to install the theme you w
     ``` bash
     $ git clone https://github.com/tommy351/hexo-theme-unit-test.git
     ```
-    
+
 2. Install your own theme and modify `theme` setting in `_config.yml`.
 3. Run server and start testing. Make sure all styles  are displayed properly.
 4. Once test is done, you can [submit your theme](https://github.com/tommy351/hexo/wiki/Themes)!
@@ -51,6 +51,7 @@ This test doesn't contain the default theme. You have to install the theme you w
 - Disqus comment support.
 - Display the post date.
 - Support `photo` and `link` layout.
+- Posts without title should be accessible.
 
 ### Optional
 
@@ -63,5 +64,4 @@ This test doesn't contain the default theme. You have to install the theme you w
 
 - [Theme](http://zespia.tw/hexo/docs/themes.html)
 - [Variables](http://zespia.tw/hexo/docs/variables.html)
-- [Pagination](http://zespia.tw/hexo/docs/pagination.html)
 - [Helpers](http://zespia.tw/hexo/docs/helpers.html)
