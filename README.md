@@ -9,7 +9,7 @@ This test doesn't contain the default theme. You have to install the theme you w
 1. Clone this repository
 
     ``` bash
-    $ git clone https://github.com/tommy351/hexo-theme-unit-test.git
+    $ git clone https://github.com/hexojs/hexo-theme-unit-test.git
     ```
 
 2. Install your own theme and modify `theme` setting in `_config.yml`.
@@ -62,6 +62,6 @@ This test doesn't contain the default theme. You have to install the theme you w
 
 ## Resources
 
-- [Theme](http://zespia.tw/hexo/docs/themes.html)
-- [Variables](http://zespia.tw/hexo/docs/variables.html)
-- [Helpers](http://zespia.tw/hexo/docs/helpers.html)
+- [Theme](https://hexo.io/docs/themes.html)
+- [Variables](https://hexo.io/docs/variables.html)
+- [Helpers](https://hexo.io/docs/helpers.html)
