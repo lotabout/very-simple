@@ -14,7 +14,7 @@ This test doesn't contain the default theme. You have to install the theme you w
 
 2. Install your own theme and modify `theme` setting in `_config.yml`.
 3. Run server and start testing. Make sure all styles  are displayed properly.
-4. Once test is done, you can [submit your theme](https://github.com/tommy351/hexo/wiki/Themes)!
+4. Once test is done, you can [submit your theme](https://hexo.io/docs/themes.html#Publishing)!
 
 ## Checklist
 
@@ -43,7 +43,7 @@ This test doesn't contain the default theme. You have to install the theme you w
 ### Index
 
 - Only display excerpts. (Better with a "Read More" link)
-- [Pagination](http://zespia.tw/hexo/docs/pagination.html)
+- [Pagination](http://zespia.tw/hexo/docs/pagination.html) (broken link)
 
 ### Post
 
