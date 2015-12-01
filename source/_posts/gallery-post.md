@@ -1,9 +1,9 @@
 title: Gallery Post
 date: 2013-12-25 00:16:18
 photos:
-- /gallery-post/wallpaper-2572384.jpg
-- /gallery-post/wallpaper-2311325.jpg
-- /gallery-post/wallpaper-878514.jpg
+- /assets/wallpaper-2572384.jpg
+- /assets/wallpaper-2311325.jpg
+- /assets/wallpaper-878514.jpg
 - http://placehold.it/350x150.jpg
 ---
 
