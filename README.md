@@ -31,7 +31,7 @@ This test doesn't contain the default theme. You have to install the theme you w
 - RSS support
 
     ``` html
-    <link rel="alternative" href="path/of/rss" type="application/atom+xml">
+    <link rel="alternate" href="path/of/rss" type="application/atom+xml">
     ```
 
 - Favicon support
