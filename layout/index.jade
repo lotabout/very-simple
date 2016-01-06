@@ -1,0 +1,23 @@
+extends base
+- var current_title = page.title || tag.name || category.name || site.title
+
+block main
+
+  // Blog title and subtitle
+  header: .container.header
+    p Blog Title
+    p sub title
+
+  article
+    .container.entries
+      for post in page.posts.toArray()
+        .entry
+          .post-time= post.date.format(config.date_format)
+          .post-title
+            a(href=url_for(post.path))
+              = post.title
+          .post-tags
+            ul
+              for tag in post.tags.toArray()
+                li.tag
+                  a(href=url_for(tag.path))= tag.name

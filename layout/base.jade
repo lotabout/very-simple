@@ -1,0 +1,18 @@
+if page.title
+  - var current_title = page.title
+else
+  - var current_title = config.title
+
+if (config.root != '/')
+  - var root = config.root
+else
+  - var root = ''
+
+doctype html
+html
+  head
+    meta(http-equiv="content-type", content="text/html; charset=utf-8")
+    block title
+
+  body
+    block main
