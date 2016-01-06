@@ -5,6 +5,14 @@ block main
   header: .container.header
     h1: = page.title
 
+  .container.meta
+    .post-time= page.date.format(config.date_format)
+    .post-tags
+      ul
+        for tag in page.tags.toArray()
+          li.tag
+            a(href=url_for(tag.path))= tag.name
+
   article
     .container
       != page.content

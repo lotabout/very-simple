@@ -1,0 +1,36 @@
+/**
+ * reset global
+ */
+html, body {
+    margin: 0;
+}
+
+/**
+ * Global settings of layout
+ */
+
+.container {
+    margin: auto;
+    max-width: 800px;
+}
+
+/**
+ * header
+ */
+header {
+    margin-bottom: 50px;
+    padding: 15px 0;
+
+    .container{
+        border-bottom: 5px solid #333;
+
+        .title {
+            font-size: 3rem;
+        }
+        .subtitle {
+            color: #aaa;
+            font-size: 2rem;
+            margin-left: 20px;
+        }
+    }
+}
