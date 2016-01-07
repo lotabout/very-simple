@@ -12,12 +12,11 @@ block main
     .container.entries
       for post in page.posts.toArray()
         .entry
-          .post-time= post.date.format(config.date_format)
+          .post-time
+            .time= post.date.format(config.date_format)
           .post-title
-            a(href=url_for(post.path))
+            a.title(href=url_for(post.path))
               = post.title
-          .post-tags
-            ul
+          .post-tags.breadcrumb
               for tag in post.tags.toArray()
-                li.tag
-                  a(href=url_for(tag.path))= tag.name
+                a.tag(href=url_for(tag.path))= tag.name
