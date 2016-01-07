@@ -1,3 +1,5 @@
+@import "_variables";
+
 /**
  * reset global
  */
@@ -19,7 +21,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     color: #333;
-    font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", "WenQuanYi Micro Hei", SimSun, "文泉驿微米黑", "宋体", Heiti, "黑体", sans-serif;
+    font-family: $font-content;
 }
 
 article {
@@ -36,7 +38,7 @@ header {
     color: #F1F1F1;
 
     .container{
-        font-family: "Comic Sans MS", cursive, LiSu, "隶书", sans-serif;
+        font-family: $font-blog-title;
         border-bottom: .3rem solid #333;
 
         .title {
@@ -55,7 +57,7 @@ nav {
     top: 0;
     position: sticky;
     background: #333;
-    font-family: "Lucida Console", Monaco, monospace;
+    font-family: $font-mono;
     font-size: 1rem;
 }
 
@@ -140,7 +142,7 @@ $entry-item-padding: .32rem 0;
         padding-right: .32rem;
 
         .time {
-            font-family: "Lucida Console", Monaco, monospace
+            font-family: $font-mono;
         }
     }
     &:hover .post-time {
@@ -233,14 +235,14 @@ footer {
  * main content style
  */
 .post-header h1 {
-    font-family: "Titillium Web","Helvetica Neue",Helvetica,Arial,"Microsoft Yahei",sans-serif;
+    font-family: $font-post-title;
     font-size: 2rem;
 }
 
 article {
     /* headers */
     h1,h2,h3,h4,h5,h6 {
-        font-family: 'Helvetica Neue', "WenQuanYi Micro Hei", SimSun, "文泉驿微米黑", "宋体", Heiti, "黑体", sans-serif;
+        font-family: $font-header;
         font-weight: normal;
     }
 
