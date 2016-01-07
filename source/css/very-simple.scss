@@ -14,12 +14,25 @@ html, body {
     max-width: 800px;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+article {
+    flex: 1;
+}
+
 /**
  * header
  */
 header {
     margin-bottom: 50px;
     padding: 15px 0;
+
+    background: #333;
+    color: #F1F1F1;
 
     .container{
         border-bottom: 5px solid #333;
@@ -47,12 +60,21 @@ $entry-item-padding: 5px 0;
         padding: 5px 0;
     }
 
+    // diable outline
+    a {
+        outline: none;
+    }
+
     .post-time {
         background: #444;
         color: #F1F1F1;
         padding-left: 5px;
         padding-right: 5px;
 
+    }
+    &:hover .post-time {
+        background: #A55956;
+        color: white;
     }
 
     .post-title {
@@ -112,7 +134,28 @@ $entry-item-padding: 5px 0;
         }
 
     }
-
-
 }
 
+
+/**
+ * footer
+ */
+
+//.bar {
+    //height: 5px;
+    //background: #333;
+    //margin: 10px 0;
+//}
+
+footer {
+    text-align: right;
+    background: #333;
+
+    &, & a, & a:visited {
+        color: white;
+    }
+
+    .footer {
+        padding: 15px 0;
+    }
+}
