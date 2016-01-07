@@ -59,6 +59,7 @@ nav {
     background: #333;
     font-family: $font-mono;
     font-size: 1rem;
+    z-index: 10;
 }
 
 #nav {
@@ -119,19 +120,19 @@ nav {
 }
 
 /* post entries */
-$entry-item-padding: .32rem 0;
+$entry-item-padding: .2rem;
 .entry {
     display: flex;
 
     padding: 0 0 2px 0;
 
     // setup padding for entry items
-    .time, .title, .tag {
-        padding: .3rem 0;
-    }
-
-    // diable outline
-    a {
+    .post-time, .post-title, .post-tag {
+        padding: $entry-item-padding 0;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         outline: none;
     }
 
@@ -141,10 +142,12 @@ $entry-item-padding: .32rem 0;
         padding-left: .32rem;
         padding-right: .32rem;
 
-        .time {
-            font-family: $font-mono;
-        }
+        font-family: $font-mono;
+        font-size: 85%;
+
+        border-radius: 5px 0 0 5px;
     }
+
     &:hover .post-time {
         //background: #5858B0;
         background: #BBB;
@@ -154,60 +157,72 @@ $entry-item-padding: .32rem 0;
     .post-title {
         flex: 1;
         padding-left: 1rem;
-        background: #EEE;
+        background: $color-near-white;
 
-        a {
-            text-decoration: none;
-            display: block;
+        text-decoration: none;
 
-            &, &:visited {
-                color: #333;
-            }
+        &, &:visited {
+            color: #333;
         }
     }
 
-    .post-tags a {
-        display: inline-block;
+    &:hover {
+        .post-title, .post-tags {
+            background: #EEE;
+        }
     }
 
     /* breadcrumb style for tags, inverse */
-    .post-tags.breadcrumb {
-        a {
-            position: relative;
-            text-align: center;
-            text-decoration: none;
-            padding-left: 7px;
-            padding-right: 2rem;
-            min-height: 1.5rem;
+    .post-tags {
+        display: flex;
 
-            &:last-child {
-                padding-right: .5rem;
-                border-radius: 0 5px 5px 0;
-            }
+        padding-left: 1.49rem;
+        overflow: hidden;
 
-            &::before {
-                border-radius: 0 100% 5px 0;
-                box-shadow: -2px 2px 0 2px rgba(255, 255, 255, 0.3), -3px 3px 0 2px rgba(0, 0, 0, 0.1);
-                content: "";
-                height: 2.1rem;
-                width: 2.1rem;
-                left: -1.05rem;
-                top: 0;
-                position: absolute;
-                transform: scale(0.7) rotate(45deg);
-            }
+        // same color as post-title
+        background: $color-near-white;
+    }
 
-            &, &::before {
-                background: #444;
-                color: white;
-            }
+    $tag-height: 1.5rem + 2*$entry-item-padding + 0.1rem;
 
-            &:hover, &:hover::before {
-                background: #BBB;
-                color: #2F6EB6;
-            }
+    a.post-tag {
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        padding-left: calc(#{$tag-height} * 0.414);
+        padding-right: calc(#{$tag-height} * 0.707);
+        min-height: 1.5rem;
+
+        &:last-child {
+            padding-right: .5rem;
+            border-radius: 0 5px 5px 0;
         }
 
+        //&:first-child::before {
+            //content: none;
+        //}
+
+        &::before {
+            border-radius: 0 100% 5px 0;
+            box-shadow: -2px 2px 0 2px rgba(255, 255, 255, 0.3), -3px 3px 0 2px rgba(0, 0, 0, 0.1);
+            content: "";
+            height: $tag-height;
+            width: $tag-height;
+            left: calc(-#{$tag-height}/2);
+            top: 0;
+            position: absolute;
+            transform: scale(0.707) rotate(45deg);
+        }
+
+        &, &::before {
+            background: #444;
+            color: white;
+        }
+
+        &:hover, &:hover::before {
+            background: #BBB;
+            color: #2F6EB6;
+        }
     }
 }
 
