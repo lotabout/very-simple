@@ -28,7 +28,6 @@ article {
  * header
  */
 header {
-    margin-bottom: 50px;
     padding: 15px 0;
 
     background: #333;
@@ -46,6 +45,41 @@ header {
             margin-left: 20px;
         }
     }
+}
+
+/* navigation bar */
+nav {
+    top: 0;
+    position: sticky;
+    background: #333;
+}
+
+#nav {
+    text-align: right;
+
+    a, a:visited {
+        text-decoration: none;
+        color: #F1F1F1;
+        padding: 10px;
+        display: inline-block;
+        border-right: 1px solid lightgray;
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+
+    // current selected one
+    a.active {
+        background: #BBB;
+        color: #333;
+    }
+
+    // TODO: add hover style
+}
+
+#header-margin-bar {
+    margin: 20px 0;
 }
 
 /* post entries */
@@ -73,8 +107,9 @@ $entry-item-padding: 5px 0;
 
     }
     &:hover .post-time {
-        background: #A55956;
-        color: white;
+        //background: #5858B0;
+        background: #BBB;
+        color: #333;
     }
 
     .post-title {
@@ -141,12 +176,6 @@ $entry-item-padding: 5px 0;
  * footer
  */
 
-//.bar {
-    //height: 5px;
-    //background: #333;
-    //margin: 10px 0;
-//}
-
 footer {
     text-align: right;
     background: #333;
@@ -159,3 +188,4 @@ footer {
         padding: 15px 0;
     }
 }
+

@@ -3,11 +3,6 @@ extends base
 
 block main
 
-  // Blog title and subtitle
-  header: .container.header
-    span.title= config.title
-    span.subtitle= config.subtitle
-
   article
     .container.entries
       for post in page.posts.toArray()

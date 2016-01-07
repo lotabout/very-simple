@@ -8,6 +8,8 @@ if (config.root != '/')
 else
   - var root = ''
 
+include _partial/helpers
+
 doctype html
 html
   head
@@ -16,4 +18,39 @@ html
     link(rel='stylesheet', type='text/css', href=root + '/css/very-simple.css')
 
   body
+
+    // include the sidebar
+    // include ./includes/sidebar.jade
+
+    // Blog title and subtitle
+    header: .container.header
+      span.title= config.title
+      span.subtitle= config.subtitle
+
+    // Navigation Links
+    nav
+      #nav.container
+        +a_with_current(config.root, __('home'), 'icon-home')
+        +a_with_current(config.archive_dir, __('archive'), 'icon-archive')
+        +a_with_current(config.about_dir, __('about'), 'icon-about')
+        //+a_with_current(config.rss, __('rss'), 'icon-rss')
+
+    #header-margin-bar
+
     block main
+
+    // label.sidebar-toggle(for="sidebar-checkbox")
+
+    // script.
+    //   (function(document) {
+    //     var toggle = document.querySelector('.sidebar-toggle');
+    //     var sidebar = document.querySelector('#sidebar');
+    //     var checkbox = document.querySelector('#sidebar-checkbox');
+    //     document.addEventListener('click', function(e) {
+    //       var target = e.target;
+    //       if(!checkbox.checked ||
+    //          sidebar.contains(target) ||
+    //          (target === checkbox || target === toggle)) return;
+    //       checkbox.checked = false;
+    //     }, false);
+    //   })(document);
