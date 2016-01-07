@@ -18,6 +18,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    color: #333;
+    font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", "WenQuanYi Micro Hei", SimSun, "文泉驿微米黑", "宋体", Heiti, "黑体", sans-serif;
 }
 
 article {
@@ -28,21 +30,22 @@ article {
  * header
  */
 header {
-    padding: 15px 0;
+    padding: 1rem 0;
 
     background: #333;
     color: #F1F1F1;
 
     .container{
-        border-bottom: 5px solid #333;
+        font-family: "Comic Sans MS", cursive, LiSu, "隶书", sans-serif;
+        border-bottom: .3rem solid #333;
 
         .title {
-            font-size: 3rem;
+            font-size: 2.4rem;
         }
         .subtitle {
             color: #aaa;
-            font-size: 2rem;
-            margin-left: 20px;
+            font-size: 1.4rem;
+            margin-left: 1.2rem;
         }
     }
 }
@@ -52,6 +55,8 @@ nav {
     top: 0;
     position: sticky;
     background: #333;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 1rem;
 }
 
 #nav {
@@ -63,7 +68,7 @@ nav {
             color: #F1F1F1;
         }
 
-        padding: 10px 20px;
+        padding: .625rem 1.25rem;
         display: inline-block;
         position: relative;
 
@@ -112,7 +117,7 @@ nav {
 }
 
 /* post entries */
-$entry-item-padding: 5px 0;
+$entry-item-padding: .32rem 0;
 .entry {
     display: flex;
 
@@ -120,7 +125,7 @@ $entry-item-padding: 5px 0;
 
     // setup padding for entry items
     .time, .title, .tag {
-        padding: 5px 0;
+        padding: .3rem 0;
     }
 
     // diable outline
@@ -131,9 +136,12 @@ $entry-item-padding: 5px 0;
     .post-time {
         background: #444;
         color: #F1F1F1;
-        padding-left: 5px;
-        padding-right: 5px;
+        padding-left: .32rem;
+        padding-right: .32rem;
 
+        .time {
+            font-family: "Lucida Console", Monaco, monospace
+        }
     }
     &:hover .post-time {
         //background: #5858B0;
@@ -143,7 +151,7 @@ $entry-item-padding: 5px 0;
 
     .post-title {
         flex: 1;
-        padding-left: 12px;
+        padding-left: 1rem;
         background: #EEE;
 
         a {
@@ -167,20 +175,21 @@ $entry-item-padding: 5px 0;
             text-align: center;
             text-decoration: none;
             padding-left: 7px;
-            padding-right: 25px;
+            padding-right: 2rem;
+            min-height: 1.5rem;
 
             &:last-child {
-                padding-right: 8px;
+                padding-right: .5rem;
                 border-radius: 0 5px 5px 0;
             }
 
             &::before {
-                border-radius: 0 50px 5px 0;
+                border-radius: 0 100% 5px 0;
                 box-shadow: -2px 2px 0 2px rgba(255, 255, 255, 0.3), -3px 3px 0 2px rgba(0, 0, 0, 0.1);
                 content: "";
-                height: 30px;
-                width: 30px;
-                left: -15px;
+                height: 2.1rem;
+                width: 2.1rem;
+                left: -1.05rem;
                 top: 0;
                 position: absolute;
                 transform: scale(0.7) rotate(45deg);
@@ -207,6 +216,7 @@ $entry-item-padding: 5px 0;
 
 footer {
     text-align: right;
+    margin-top: 2rem;
     background: #333;
 
     &, & a, & a:visited {
@@ -214,7 +224,39 @@ footer {
     }
 
     .footer {
-        padding: 15px 0;
+        padding: 1rem 0;
     }
 }
 
+
+/**
+ * main content style
+ */
+.post-header h1 {
+    font-family: "Titillium Web","Helvetica Neue",Helvetica,Arial,"Microsoft Yahei",sans-serif;
+    font-size: 2rem;
+}
+
+article {
+    /* headers */
+    h1,h2,h3,h4,h5,h6 {
+        font-family: 'Helvetica Neue', "WenQuanYi Micro Hei", SimSun, "文泉驿微米黑", "宋体", Heiti, "黑体", sans-serif;
+        font-weight: normal;
+    }
+
+    h1 {
+        border-bottom: 2px solid #333;
+        padding: 3px 0;
+        margin: 2rem 0 1.5rem 0;
+        font-size: 2rem;
+    }
+
+    h2 {
+        border-bottom: 1px solid #CCC;
+    }
+
+    hr {
+        border-top: 3px dashed #878787;
+        border-bottom: none;
+    }
+}
