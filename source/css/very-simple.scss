@@ -32,22 +32,22 @@ article {
  * header
  */
 header {
-    padding: 1rem 0;
+    padding: 1em 0;
 
     background: #333;
     color: #F1F1F1;
 
     .container{
         font-family: $font-blog-title;
-        border-bottom: .3rem solid #333;
+        border-bottom: .3em solid #333;
 
         .title {
-            font-size: 2.4rem;
+            font-size: 2.4em;
         }
         .subtitle {
             color: #aaa;
-            font-size: 1.4rem;
-            margin-left: 1.2rem;
+            font-size: 1.4em;
+            margin-left: 1.2em;
         }
     }
 }
@@ -58,7 +58,7 @@ nav {
     position: sticky;
     background: #333;
     font-family: $font-mono;
-    font-size: 1rem;
+    font-size: 1em;
     z-index: 10;
 }
 
@@ -71,7 +71,7 @@ nav {
             color: #F1F1F1;
         }
 
-        padding: .625rem 1.25rem;
+        padding: .625em 1.25em;
         display: inline-block;
         position: relative;
 
@@ -120,7 +120,7 @@ nav {
 }
 
 /* post entries */
-$entry-item-padding: .2rem;
+$entry-item-padding: .2em;
 .entry {
     display: flex;
 
@@ -139,8 +139,8 @@ $entry-item-padding: .2rem;
     .post-time {
         background: #444;
         color: #F1F1F1;
-        padding-left: .32rem;
-        padding-right: .32rem;
+        padding-left: .32em;
+        padding-right: .32em;
 
         font-family: $font-mono;
         font-size: 85%;
@@ -156,7 +156,7 @@ $entry-item-padding: .2rem;
 
     .post-title {
         flex: 1;
-        padding-left: 1rem;
+        padding-left: 1em;
         background: $color-near-white;
 
         text-decoration: none;
@@ -176,14 +176,14 @@ $entry-item-padding: .2rem;
     .post-tags {
         display: flex;
 
-        padding-left: 1.49rem;
+        padding-left: 1.49em;
         overflow: hidden;
 
         // same color as post-title
         background: $color-near-white;
     }
 
-    $tag-height: 1.5rem + 2*$entry-item-padding + 0.1rem;
+    $tag-height: 1.5em + 2*$entry-item-padding + 0.1em;
 
     a.post-tag {
         position: relative;
@@ -191,10 +191,10 @@ $entry-item-padding: .2rem;
         text-decoration: none;
         padding-left: calc(#{$tag-height} * 0.414);
         padding-right: calc(#{$tag-height} * 0.707);
-        min-height: 1.5rem;
+        min-height: 1.5em;
 
         &:last-child {
-            padding-right: .5rem;
+            padding-right: .5em;
             border-radius: 0 5px 5px 0;
         }
 
@@ -233,7 +233,7 @@ $entry-item-padding: .2rem;
 
 footer {
     text-align: right;
-    margin-top: 2rem;
+    margin-top: 2em;
     background: #333;
 
     &, & a, & a:visited {
@@ -241,7 +241,7 @@ footer {
     }
 
     .footer {
-        padding: 1rem 0;
+        padding: 1em 0;
     }
 }
 
@@ -251,7 +251,7 @@ footer {
  */
 .post-header h1 {
     font-family: $font-post-title;
-    font-size: 2rem;
+    font-size: 2em;
 }
 
 article {
@@ -264,8 +264,8 @@ article {
     h1 {
         border-bottom: 2px solid #333;
         padding: 3px 0;
-        margin: 2rem 0 1.5rem 0;
-        font-size: 2rem;
+        margin: 2em 0 1.5em 0;
+        font-size: 2em;
     }
 
     h2 {
