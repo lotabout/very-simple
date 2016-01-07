@@ -57,22 +57,51 @@ nav {
 #nav {
     text-align: right;
 
-    a, a:visited {
-        text-decoration: none;
-        color: #F1F1F1;
-        padding: 10px;
-        display: inline-block;
-        border-right: 1px solid lightgray;
-
-        &:last-child {
-            border-right: none;
+    a {
+        &, &:visited {
+            text-decoration: none;
+            color: #F1F1F1;
         }
-    }
 
-    // current selected one
-    a.active {
-        background: #BBB;
-        color: #333;
+        padding: 10px 20px;
+        display: inline-block;
+        position: relative;
+
+        // decoration
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            right: -3px;
+            top: 19px;
+            height: 6px;
+            width: 6px;
+            background: white;
+            opacity: 0.5;
+        }
+
+        // for hover style
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 3px;
+            width: 0;
+            background: #5DB1B4;
+            transition: width .25s;
+        }
+
+        &.active, &:hover {
+            &::before {
+                width: 100%;
+            }
+        }
+
+        &:last-child::after {
+            display: none;
+        }
     }
 
     // TODO: add hover style
