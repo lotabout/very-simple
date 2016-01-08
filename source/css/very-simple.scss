@@ -271,6 +271,7 @@ footer#footer {
         flex: 1;
 
         a.tag {
+            position: relative;
             padding: 3px 10px;
             background: $color-underscore;
             text-decoration: none;
