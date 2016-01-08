@@ -95,13 +95,11 @@ article {
             margin-bottom: 1em;
         }
         a {
-            color: $highlight-aqua;
+            color: $highlight-aqua !important;
             text-decoration: none;
-            border: none;
             float: right;
             &:hover {
-                border: none;
-                color: $highlight-blue;
+                color: $highlight-blue !important;
 
             }
         }

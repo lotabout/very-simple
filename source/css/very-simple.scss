@@ -301,7 +301,7 @@ article {
     /* headers */
     h1,h2,h3,h4,h5,h6 {
         font-family: $font-header;
-        font-weight: normal;
+        font-weight: 600;
     }
 
     h1 {
@@ -315,14 +315,6 @@ article {
         border-bottom: 1px solid #CCC;
     }
 
-    h3 {
-        //@extend .clearfix;
-        //border-bottom: 1px solid #CCC;
-        text-decoration: underline;
-        -webkit-text-decoration-color: #CCC;
-        text-decoration-color: #CCC;
-    }
-
     // rule
     hr {
         border-top: 3px dashed #878787;
@@ -330,7 +322,7 @@ article {
     }
 
     // link
-    a {
+    .post a {
         color: $color-main-link;
         text-decoration: none;
         opacity: 0.9;
@@ -343,6 +335,11 @@ article {
             border-bottom: .08em solid $color-main-link-hover;
             color: $color-main-link-hover;
         }
+    }
+
+    // ignore border-bottom for code blocks
+    .post .highlight a {
+        border: none !important;
     }
 
     // blockquote
