@@ -97,7 +97,13 @@ article {
         a {
             color: $highlight-aqua;
             text-decoration: none;
+            border: none;
             float: right;
+            &:hover {
+                border: none;
+                color: $highlight-blue;
+
+            }
         }
         .gutter pre {
             @extend .line-numbers;

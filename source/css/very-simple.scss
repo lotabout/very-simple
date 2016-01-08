@@ -330,8 +330,18 @@ article {
 
     // link
     a {
-        text-decoration: none;
         color: $color-main-link;
+        text-decoration: none;
+        opacity: 0.9;
+
+        transition: border .2s;
+        transition: color .2s;
+        border-bottom: .08em solid lightgray;
+        &:hover {
+            opacity: 1;
+            border-bottom: .08em solid $color-main-link-hover;
+            color: $color-main-link-hover;
+        }
     }
 
     // blockquote
