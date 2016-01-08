@@ -6,3 +6,6 @@ rss: /atom.xml
 
 # Content
 fancybox: true
+
+duoshuo: #duoshuo_shortname
+disqus: #disqus _shortname
