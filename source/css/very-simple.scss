@@ -44,6 +44,8 @@ header {
         border-bottom: .3em solid #333;
 
         .title {
+            color: #EEE;
+            text-decoration: none;
             font-size: 2.4em;
         }
         .subtitle {
@@ -475,5 +477,17 @@ article {
 
     img {
         width: 100%;
+    }
+}
+
+// archive/category/tags page
+.post-archive {
+    // reset list indentation
+    ol, ul {
+        padding-left: 40px;
+    }
+
+    li .date {
+        margin-right: 1em;
     }
 }

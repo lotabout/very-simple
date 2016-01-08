@@ -1,0 +1,4 @@
+.container
+  if page.total > 1
+    .page-navigator
+      != paginator({prev_text: '&laquo; Prev', next_text: 'Next &raquo;'})
