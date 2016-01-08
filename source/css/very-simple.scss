@@ -5,6 +5,7 @@
  */
 html, body {
     margin: 0;
+    font-size: $font-size-main;
 }
 
 /**
@@ -13,7 +14,7 @@ html, body {
 
 .container {
     margin: auto;
-    max-width: 800px;
+    max-width: 680px;
 }
 
 body {
@@ -97,7 +98,7 @@ nav {
             bottom: 0;
             height: 3px;
             width: 0;
-            background: #5DB1B4;
+            background: $color-underscore;
             transition: width .25s;
         }
 
@@ -272,8 +273,20 @@ article {
         border-bottom: 1px solid #CCC;
     }
 
+    h3 {
+        border-bottom: 1px solid #CCC;
+        display: inline-block;
+    }
+
+    // rule
     hr {
         border-top: 3px dashed #878787;
         border-bottom: none;
+    }
+
+    // link
+    a {
+        text-decoration: none;
+        color: $color-main-link;
     }
 }

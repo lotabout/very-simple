@@ -3,6 +3,7 @@
 
 @import "_variables";
 
+// theme: night
 $highlight-background: #1d1f21;
 $highlight-current-line: #282a2e;
 $highlight-selection: #373b41;
@@ -16,15 +17,33 @@ $highlight-aqua: #8abeb7;
 $highlight-blue: #81a2be;
 $highlight-purple : #b294bb;
 
+// theme: night eighties
+$highlight-background: #2d2d2d;
+$highlight-current-line: #393939;
+$highlight-selection: #515151;
+$highlight-foreground: #cccccc;
+$highlight-comment: #999999;
+$highlight-red: #f2777a;
+$highlight-orange: #f99157;
+$highlight-yellow: #ffcc66;
+$highlight-green: #99cc99;
+$highlight-aqua: #66cccc;
+$highlight-blue: #6699cc;
+$highlight-purple: #cc99cc;
+
 .code-block {
     background: $highlight-background;
+    //margin: 0 $article-padding * -1;
     margin: 0;
-    padding: 1rem 0;
+    padding: 1rem $article-padding;
     border-style: solid;
     border-color: #333;
     border: 1px 0;
+    border-radius: 2px;
     overflow: auto;
     color: $highlight-foreground;
+    font-size: $font-size-code;
+    line-height: $line-height;
 }
 
 .line-numbers {
@@ -53,7 +72,8 @@ article {
     }
 
     .highlight {
-        @extend $code-block;
+        @extend .code-block;
+
         pre {
             border: none;
             margin: 0;
@@ -75,6 +95,8 @@ article {
             margin-bottom: 1em;
         }
         a {
+            color: $highlight-aqua;
+            text-decoration: none;
             float: right;
         }
         .gutter pre {
@@ -83,16 +105,18 @@ article {
             padding-right: 20px;
         }
         .line {
-            //height: font-size * line-height
+            height: $line-height;
         }
     }
-    .gist {
-        //margin: 0 article-padding * -1
+
+    .gist-not-used {
+        //margin: 0 $article-padding * -1;
+        margin: 0;
         border-style: solid;
         border-color: $color-border;
         border-width: 1px 0;
         background: $highlight-background;
-        //padding: 15px article-padding 15px 0
+        padding: 1em $article-padding 1em 2px;
         .gist-file {
             border: none;
             font-family: $font-mono;
@@ -122,7 +146,7 @@ article {
                 text-shadow: 0 0;
                 padding: 0;
                 margin-top: 1em;
-                //margin-left: article-padding
+                margin-left: $article-padding;
                 //
             }
             a {
@@ -133,6 +157,11 @@ article {
                 }
             }
         }
+    }
+
+    // for jsfiddle
+    iframe {
+        border: 1px solid #CCC;
     }
 }
 

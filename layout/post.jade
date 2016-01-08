@@ -10,8 +10,9 @@ block main
     .container.meta
       .post-time= page.date.format(config.date_format)
       .post-tags
-          for tag in page.tags.toArray()
-              a.tag(href=url_for(tag.path))= tag.name
+          if page.tags
+              for tag in page.tags.toArray()
+                  a.tag(href=url_for(tag.path))= tag.name
 
   article
     .container

@@ -3,17 +3,24 @@
 $font-mono: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
 $font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-serif: Georgia, "Times New Roman", serif;
-$font-blog-title: "Comic Sans MS", cursive, LiSu, "隶书", sans-serif;
+$font-blog-title: "Comic Sans MS", cursive, LiSu, sans-serif;
 $font-post-title: "Titillium Web","Helvetica Neue",Helvetica,Arial,"Microsoft Yahei",sans-serif;
-$font-header: 'Helvetica Neue', "WenQuanYi Micro Hei", "文泉驿微米黑", Heiti, "黑体", sans-serif;
-$font-content: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", "WenQuanYi Micro Hei", SimSun, "文泉驿微米黑", "宋体", Heiti, "黑体", sans-serif;
+$font-header: 'Helvetica Neue', "WenQuanYi Micro Hei", Heiti, Impact, Charcoal, sans-serif;
+$font-content: Helvetica, Tahoma, Arial, STXihei, "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, Heiti, ubuntu, sans-serif;
 
+$font-size-main: 16px;
+$font-size-code: 16px;
+$line-height: 1.6em;
+$line-height-title: 1.1em;
 
 // colors
 $color-background: white;
 $color-border: #CCC;
 $color-link: blue;
 $color-near-white: #FAFAFA;
+$color-underscore: #5DB1B4;
+$color-main-link: #9c9;
 
 
 // width height
+$article-padding: 1em;
