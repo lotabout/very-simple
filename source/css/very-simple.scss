@@ -307,6 +307,7 @@ footer#footer {
 
     .post-time {
         opacity: 0.8;
+        margin-left: 1em;
     }
 
     .post-tags {
@@ -325,6 +326,18 @@ footer#footer {
                 transition: box-shadow .3s;
                 box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5);
             }
+        }
+    }
+
+    .post-categories a.category {
+        background: $color-underscore;
+        text-decoration: none;
+        color: #333;
+        padding: 0 5px;
+        &:hover {
+            z-index: 1;
+            transition: box-shadow .3s;
+            box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5);
         }
     }
 }
