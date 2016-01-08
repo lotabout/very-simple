@@ -32,10 +32,10 @@ html
     // Navigation Links
     nav
       #nav.container
-        +a_with_current(config.root, __('home'), 'icon-home')
-        +a_with_current(config.archive_dir, __('archive'), 'icon-archive')
-        +a_with_current(config.about_dir, __('about'), 'icon-about')
-        //+a_with_current(config.rss, __('rss'), 'icon-rss')
+        each nav, name in theme.menu
+          +a_with_current(nav, __(name))
+        if theme.rss
+          +a_with_current(theme.rss, __('RSS'))
 
     #header-margin-bar
 
@@ -58,19 +58,3 @@ html
         $(document).ready(function() {
             $(".fancybox").fancybox();
         });
-
-    // label.sidebar-toggle(for="sidebar-checkbox")
-
-    // script.
-    //   (function(document) {
-    //     var toggle = document.querySelector('.sidebar-toggle');
-    //     var sidebar = document.querySelector('#sidebar');
-    //     var checkbox = document.querySelector('#sidebar-checkbox');
-    //     document.addEventListener('click', function(e) {
-    //       var target = e.target;
-    //       if(!checkbox.checked ||
-    //          sidebar.contains(target) ||
-    //          (target === checkbox || target === toggle)) return;
-    //       checkbox.checked = false;
-    //     }, false);
-    //   })(document);

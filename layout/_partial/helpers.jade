@@ -1,10 +1,8 @@
-mixin a_with_current(href, content, id)
+mixin a_with_current(href, content)
   - var url = url_for(href)
   if (href == '/' && (is_home() || is_post())) || is_current(href)
     a.sidebar-nav-item.active(href=url)
       = content
-      //i(class=id)= ' ' + content
   else
     a.sidebar-nav-item(href=url)
       = content
-      //i(class=id)= ' ' + content
