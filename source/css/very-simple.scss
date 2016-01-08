@@ -477,6 +477,29 @@ article {
         border: 1px solid #BBB;
         background: #EEE;
     }
+
+    // table
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+        vertical-align: middle;
+
+        th {
+            text-align: left;
+            background: #333;
+            color: #EEE;
+        }
+
+        th, td {
+            padding: 5px 8px;
+            border: 1px solid #ddd;
+        }
+
+        tr:nth-child(2n) {
+            background-color: #f2f2f2;
+        }
+    }
 }
 
 // fancybox
