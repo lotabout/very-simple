@@ -24,3 +24,12 @@ $color-main-link: #9c9;
 
 // width height
 $article-padding: 1em;
+
+
+.clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}

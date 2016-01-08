@@ -274,8 +274,9 @@ article {
     }
 
     h3 {
-        border-bottom: 1px solid #CCC;
-        display: inline-block;
+        //@extend .clearfix;
+        //border-bottom: 1px solid #CCC;
+        text-decoration: underline #CCC;
     }
 
     // rule
@@ -288,5 +289,32 @@ article {
     a {
         text-decoration: none;
         color: $color-main-link;
+    }
+
+    // blockquote
+    blockquote {
+        margin: 1em 0;
+        padding: 0 $article-padding;
+        border-left: 5px solid $color-underscore;
+    }
+
+    blockquote.pullquote.left {
+        border: none;
+        margin: 0 1em 0 .5em;
+        width: 45%;
+    }
+
+    blockquote.pullquote.right {
+        border: none;
+        margin: 0 .5em 0 1em;
+        width: 45%;
+    }
+
+    .left, .alignleft {
+        float: left;
+    }
+
+    .right, .alignright {
+        float: right;
     }
 }

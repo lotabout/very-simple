@@ -88,7 +88,7 @@ article {
             padding: 0;
         }
         figcaption {
-            //clearfix()
+            @extend .clearfix;
             font-size: 0.85em;
             color: $highlight-comment;
             line-height: 1em;
