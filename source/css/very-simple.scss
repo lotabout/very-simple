@@ -227,6 +227,45 @@ $entry-item-padding: .5ex;
     }
 }
 
+/* paginator */
+.page-navigator {
+    margin: 3.5ex 0;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid #DDD;
+    color: #777;
+
+    * {
+        padding: 1px 20px;
+    }
+
+    .page-number {
+        display: inline-block;
+    }
+
+    .current {
+        color: #2F6EB6;
+    }
+
+    .prev {
+        float: left;
+    }
+
+    .next {
+        float: right;
+    }
+
+
+    a {
+        color: inherit;
+        text-decoration: none;
+        &:hover {
+            background: #BBB;
+            color: #2F6EB6;
+        }
+    }
+}
+
 
 /**
  * footer
