@@ -327,4 +327,29 @@ article {
     .right, .alignright {
         float: right;
     }
+
+    // image
+    img, video{
+        display: block;
+        height: auto;
+        margin: auto;
+        max-width: 100%;
+        border: none;
+        box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.4);
+    }
+
+    .video-container {
+        position: relative;
+        padding-top: 56.9%; // 16:9
+        height: 0;
+        overflow: hidden;
+        iframe, object, embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            margin-top: 0;
+        }
+    }
 }
