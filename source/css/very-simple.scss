@@ -255,6 +255,38 @@ footer#footer {
     font-size: 2em;
 }
 
+/* post header meta data(time/tag) */
+.wrapper .meta {
+    display: flex;
+    background: #333;
+    color: #EEE;
+    box-sizing: border-box;
+    padding: 0 20px;
+
+    .post-time {
+        opacity: 0.8;
+    }
+
+    .post-tags {
+        flex: 1;
+
+        a.tag {
+            padding: 3px 10px;
+            background: $color-underscore;
+            text-decoration: none;
+
+            color: #333;
+
+            &:hover {
+                z-index: 1;
+                transition: box-shadow .3s;
+                box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5);
+            }
+        }
+    }
+}
+
+
 article {
     /* global */
     font-size: 18px;

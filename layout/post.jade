@@ -17,11 +17,11 @@ block main
 
   .wrapper
     .container.meta
-      .post-time= page.date.format(config.date_format)
       .post-tags
           if page.tags
               for tag in page.tags.toArray()
                   a.tag(href=url_for(tag.path))= tag.name
+      .post-time= page.date.format(config.date_format)
 
   article
     .container
