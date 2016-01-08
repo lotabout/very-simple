@@ -347,7 +347,6 @@ article {
     h1 {
         border-bottom: 2px solid #333;
         padding: 3px 0;
-        margin: 2em 0 1.5em 0;
         font-size: 2em;
     }
 
@@ -444,6 +443,19 @@ article {
         }
     }
 
+    // cancel dangling list for the first level
+    ol, ul {
+        padding-left: 0;
+        ol, ul {
+            padding-left: 40px;
+        }
+    }
+
+    // list
+    li p {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
 }
 
 // fancybox
