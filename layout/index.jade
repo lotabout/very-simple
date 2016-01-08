@@ -21,6 +21,7 @@ block main
             for tag in post.tags.toArray()
               a.post-tag(href=url_for(tag.path))= tag.name
 
-      if page.total > 1
-        .page-navigator
-          != paginator({prev_text: '&laquo; Prev', next_text: 'Next &raquo;'})
+  .container
+    if page.total > 1
+      .page-navigator
+        != paginator({prev_text: '&laquo; Prev', next_text: 'Next &raquo;'})
