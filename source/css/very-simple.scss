@@ -14,7 +14,7 @@ html, body {
 
 .container {
     margin: auto;
-    max-width: 680px;
+    max-width: 720px;
 }
 
 body {
@@ -121,7 +121,7 @@ nav {
 }
 
 /* post entries */
-$entry-item-padding: .2em;
+$entry-item-padding: .5ex;
 .entry {
     display: flex;
 
@@ -184,7 +184,7 @@ $entry-item-padding: .2em;
         background: $color-near-white;
     }
 
-    $tag-height: 1.5em + 2*$entry-item-padding + 0.1em;
+    $tag-height: 3.2ex + 2*$entry-item-padding + 0.1ex;
 
     a.post-tag {
         position: relative;
@@ -192,7 +192,7 @@ $entry-item-padding: .2em;
         text-decoration: none;
         padding-left: calc(#{$tag-height} * 0.414);
         padding-right: calc(#{$tag-height} * 0.707);
-        min-height: 1.5em;
+        min-height: 3ex;
 
         &:last-child {
             padding-right: .5em;
@@ -256,6 +256,15 @@ footer#footer {
 }
 
 article {
+    /* global */
+    font-size: 18px;
+    line-height: 1.75;
+
+    .entry {
+        font-size: 16px;
+    }
+
+
     /* headers */
     h1,h2,h3,h4,h5,h6 {
         font-family: $font-header;
@@ -276,7 +285,9 @@ article {
     h3 {
         //@extend .clearfix;
         //border-bottom: 1px solid #CCC;
-        text-decoration: underline #CCC;
+        text-decoration: underline;
+        -webkit-text-decoration-color: #CCC;
+        text-decoration-color: #CCC;
     }
 
     // rule
