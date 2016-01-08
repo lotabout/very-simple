@@ -232,7 +232,7 @@ $entry-item-padding: .2em;
  * footer
  */
 
-footer {
+footer#footer {
     text-align: right;
     margin-top: 2em;
     background: #333;
@@ -296,6 +296,16 @@ article {
         margin: 1em 0;
         padding: 0 $article-padding;
         border-left: 5px solid $color-underscore;
+
+        // block footer
+        footer {
+            font-size: 85%;
+            cite::before {
+                content: "—";
+                padding: 0 0.5em;
+                font-style: italic;
+            }
+        }
     }
 
     blockquote.pullquote.left {
