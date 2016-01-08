@@ -49,6 +49,16 @@ html
           |  Powered by
           a(rel='nofollow', target='_blank', href='https://hexo.io')  Hexo.
 
+    if theme.fancybox
+      link(rel='stylesheet', type='text/css', href=root + '/fancybox/jquery.fancybox.css')
+      script(src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js")
+      script(src=root + '/fancybox/jquery.fancybox.pack.js')
+
+      script.
+        $(document).ready(function() {
+            $(".fancybox").fancybox();
+        });
+
     // label.sidebar-toggle(for="sidebar-checkbox")
 
     // script.

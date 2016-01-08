@@ -352,4 +352,19 @@ article {
             margin-top: 0;
         }
     }
+
+}
+
+// fancybox
+.article-gallery a.article-gallery-img {
+    width: 100%;
+    display: none;
+
+    &:first-child {
+        display: block;
+    }
+
+    img {
+        width: 100%;
+    }
 }
