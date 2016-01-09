@@ -453,8 +453,32 @@ footer#footer {
         color: white;
     }
 
+    .bar {
+        display: flex;
+        flex-wrap: wrap;
+
+        .social {
+            display: flex;
+            align-items: center;
+            a {
+                display: inline-block;
+                padding: 6px 12px;
+                margin: 0 2px;
+                font-size: 20px;
+
+                transition: all .2s ease-in-out;
+
+                &:hover {
+                    background: #EEE;
+                    color: #333;
+                }
+            }
+        }
+    }
+
     .footer {
         padding: 1em 0;
+        flex: 1
     }
 }
 

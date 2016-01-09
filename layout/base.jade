@@ -35,8 +35,6 @@ html
       #nav.container
         each nav, name in theme.menu
           +a_with_current(nav, __(name))
-        if theme.rss
-          +a_with_current(theme.rss, __('RSS'))
 
     #header-margin-bar
 
@@ -46,7 +44,12 @@ html
       .container
         .bar
           .social
-            //<i class="fa fa-camera-retro"></i> fa-camera-retro
+            +social_icon('email', "mailto:", "fa-envelope-o")
+            +social_icon('twitter', 'http://twitter.com/', 'fa-twitter')
+            +social_icon('github', 'https://github.com/', 'fa-github')
+            +social_icon('googleplus', 'https://plus.google.com/', 'fa-google-plus')
+            +social_icon('rss', "", "fa-rss")
+
           .footer= '© '
             a(href='/', rel='nofollow')= config.title + '.'
             |  Powered by
@@ -54,7 +57,7 @@ html
 
     if theme.fancybox
       link(rel='stylesheet', type='text/css', href=root + '/fancybox/jquery.fancybox.css')
-      script(src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js")
+      //script(src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js")
       script(src=root + '/fancybox/jquery.fancybox.pack.js')
 
       script.

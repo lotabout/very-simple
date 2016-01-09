@@ -2,7 +2,9 @@
 menu:
   Home: /
   Archives: /archives
-rss: /atom.xml
+
+social:
+    rss: /atom.xml
 
 # Content
 fancybox: true
