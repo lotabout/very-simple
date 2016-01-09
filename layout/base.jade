@@ -44,10 +44,11 @@ html
     footer#footer
       .container
         .bar
-        .footer= '© '
-          a(href='/', rel='nofollow')= config.title + '.'
-          |  Powered by
-          a(rel='nofollow', target='_blank', href='https://hexo.io')  Hexo.
+          .social
+          .footer= '© '
+            a(href='/', rel='nofollow')= config.title + '.'
+            |  Powered by
+            a(rel='nofollow', target='_blank', href='https://hexo.io')  Hexo.
 
     if theme.fancybox
       link(rel='stylesheet', type='text/css', href=root + '/fancybox/jquery.fancybox.css')
