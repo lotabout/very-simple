@@ -106,8 +106,10 @@ a:hover {
  * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
  */
 
-abbr[title] {
+abbr[title],
+acronym[title] {
   border-bottom: 1px dotted;
+  text-decoration: none;
 }
 
 /**
