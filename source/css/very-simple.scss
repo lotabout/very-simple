@@ -72,6 +72,11 @@ header {
             color: #aaa;
             font-size: 1.4em;
             margin-left: 1.2em;
+
+            @media(max-width: $break-level-2) {
+                display: block;
+                margin-left: 0;
+            }
         }
     }
 }
