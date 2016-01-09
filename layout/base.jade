@@ -34,10 +34,15 @@ html
     header: .container.header
       a#logo.title(href='/')= config.title
       span.subtitle= config.subtitle
+      label#toggle-menu(for="menu", onclick)
+        i.fa.fa-bars
+
+    // use checkbox hack for toggle nav-bar on small screens
+    input#menu(type="checkbox")
 
     // Navigation Links
-    nav
-      #nav.container
+    nav#nav
+      .container
         each nav, name in theme.menu
           +a_with_current(nav, __(name))
 

@@ -6,6 +6,7 @@
 html, body {
     margin: 0;
     font-size: $font-size-main;
+    position: relative;
 }
 
 /**
@@ -77,14 +78,22 @@ header {
             color: #aaa;
             font-size: 1.4em;
             margin-left: 1.2em;
-
-            @media only screen and (max-width: $break-level-2) {
-                display: none;
-            }
         }
     }
     @media only screen and (max-width: $break-level-2) {
         padding: 0;
+
+        .container.header {
+            display: flex;
+            align-items: center;
+
+            .title {
+                flex: 1;
+            }
+            .subtitle {
+                display: none;
+            }
+        }
     }
 }
 
@@ -151,8 +160,62 @@ nav {
             display: none;
         }
     }
+}
 
-    // TODO: add hover style
+/* menu button on small screen */
+#menu {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+#toggle-menu{
+    cursor: pointer;
+    user-select: none;
+    display: none; // large display, hide it
+}
+
+@media only screen and (max-width: $break-level-2) {
+    #toggle-menu {
+        display: block;
+        color: #EEE;
+        font-size: 2.2em;
+    }
+
+    #nav {
+        display: none;
+    }
+
+    #menu:checked ~ #nav {
+        display: block;
+
+        a {
+            display: block;
+
+            // style
+            color: #CCC;
+            border-bottom: 1px solid #CCC;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &:hover {
+                background: #CCC;
+                color: #333;
+            }
+
+            // disable hover style
+            &::before {
+                display: none;
+            }
+
+            // enable decoration
+            &:last-child::after {
+                display: block;
+            }
+        }
+    }
 }
 
 #header-margin-bar {

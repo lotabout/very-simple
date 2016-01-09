@@ -2,6 +2,8 @@
 menu:
   Home: /
   Archives: archives
+  About: about
+  Another: another
 
 social:
     rss: /atom.xml
