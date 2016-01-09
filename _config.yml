@@ -2,14 +2,12 @@
 menu:
   Home: /
   Archives: archives
-  About: about
-  Another: another
 
 social:
     rss: /atom.xml
 
 # Content
-fancybox: true
+fancybox: false
 
 duoshuo: #duoshuo_shortname
 disqus: #disqus _shortname
