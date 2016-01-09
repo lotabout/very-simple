@@ -230,6 +230,89 @@ $entry-item-padding: .5ex;
     }
 }
 
+/* post entries, version 2*/
+
+// vertical bar
+#index-main.container {
+    position: relative;
+    box-sizing: border-box;
+
+    &::before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 6px;
+        background: #666; // #333 with opacity 0.75
+    }
+}
+
+$outer-circle-radius: 10px;
+$inner-circle-radius: 8px;
+
+.post-entry {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 1.5em 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .post-time {
+        flex: none;
+        font-family: $font-mono;
+        font-size: 0.875rem;
+        margin-right: 1rem;
+        position: absolute;
+        right: 100%;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            left: calc(100% + 1rem + #{$vertical-bar-width}/2 - #{$outer-circle-radius});
+            top: calc(50% - #{$outer-circle-radius});
+            background: #666; // #333 with opacity 0.75
+            border-radius: 100%;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            left: calc(100% + 1rem + #{$vertical-bar-width}/2 - #{$inner-circle-radius});
+            top: calc(50% - #{$inner-circle-radius});
+            background: #FCF9E8;
+            border-radius: 100%;
+            transition: background-color .2s ease-in-out;
+        }
+    }
+
+    &:hover {
+        .post-time::after {
+            background: $color-underscore;
+        }
+    }
+
+    .post-desc {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-left: calc(1rem + #{$vertical-bar-width});
+
+        .post-title, .post-tags, .post-description {
+            flex: none;
+            flex-basis: 100%;
+        }
+
+        .post-tags .tag {
+            display: inline-block;
+        }
+    }
+}
+
 /* paginator */
 .page-navigator {
     margin: 3.5ex 0;
