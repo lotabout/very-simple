@@ -310,13 +310,9 @@ $inner-circle-radius: 8px;
         justify-content: space-between;
         margin-left: calc(1rem + #{$vertical-bar-width});
 
-        .post-title, .post-tags, .post-description {
+        .post-title, .post-tags, .post-categories, .post-description {
             flex: none;
             flex-basis: 100%;
-        }
-
-        .post-tags .tag {
-            display: inline-block;
         }
 
         // style for post-title
@@ -333,6 +329,7 @@ $inner-circle-radius: 8px;
             a {
                 color: #333;
                 text-decoration: none;
+                border: none;
             }
         }
 
@@ -352,8 +349,9 @@ $inner-circle-radius: 8px;
                 font-family: FontAwesome;
             }
 
-            a.post-tag {
+            a{
                 text-decoration: none;
+                outline: none;
                 color: #666;
                 margin: 0 .6rem;
                 &:hover {
@@ -379,6 +377,15 @@ $inner-circle-radius: 8px;
                 &:last-child::after{
                     content: none;
                 }
+            }
+        }
+
+        // style for post-categories
+        .post-categories {
+            @extend .post-tags;
+
+            &::before {
+                content: "\f07b";
             }
         }
 
@@ -539,7 +546,7 @@ article {
     }
 
     // link
-    .post a {
+    a {
         color: $color-main-link;
         text-decoration: none;
         opacity: 0.9;
