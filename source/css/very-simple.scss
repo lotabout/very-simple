@@ -14,6 +14,7 @@ html, body {
  */
 $break-level-1: 320px;
 $break-level-2: 360px;
+$break-level-3-1: 680px;
 $break-level-3: 768px;
 $break-level-4: 900px; // > 900px timeline will work.
 $break-level-5: 980px;
@@ -792,5 +793,17 @@ article {
 
     li .date {
         margin-right: 1em;
+    }
+
+    @media only screen and (max-width: $break-level-3-1) {
+        ul {
+            padding-left: 0;
+            li {
+                margin: 1em 0;
+            }
+        }
+        a {
+            display: block;
+        }
     }
 }
