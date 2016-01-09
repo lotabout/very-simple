@@ -29,10 +29,15 @@ $break-level-5: 980px;
     width: 100%;
     max-width: 720px;
 
-    @media(max-width: $break-level-5) {
+    @media only screen and (max-width: $break-level-5) {
         max-width: 680px;
     }
-    @media(max-width: $break-level-3) {
+
+    @media only screen and (max-width: $break-level-3) {
+        max-width: 88.54%;
+    }
+
+    @media only screen and (max-width: $break-level-2) {
         max-width: 95%;
     }
 }
@@ -73,11 +78,13 @@ header {
             font-size: 1.4em;
             margin-left: 1.2em;
 
-            @media(max-width: $break-level-2) {
-                display: block;
-                margin-left: 0;
+            @media only screen and (max-width: $break-level-2) {
+                display: none;
             }
         }
+    }
+    @media only screen and (max-width: $break-level-2) {
+        padding: 0;
     }
 }
 
@@ -90,7 +97,7 @@ nav {
     font-size: 1em;
     z-index: 10;
 
-    @media(max-width: $break-level-2) {
+    @media only screen and (max-width: $break-level-2) {
         position: static;
     }
 }
@@ -152,113 +159,6 @@ nav {
     margin: 20px 0;
 }
 
-/* post entries */
-$entry-item-padding: .5ex;
-.entry {
-    display: flex;
-
-    padding: 0 0 2px 0;
-
-    // setup padding for entry items
-    .post-time, .post-title, .post-tag {
-        padding: $entry-item-padding 0;
-        text-decoration: none;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        outline: none;
-    }
-
-    .post-time {
-        background: #444;
-        color: #F1F1F1;
-        padding-left: .32em;
-        padding-right: .32em;
-
-        font-family: $font-mono;
-        font-size: 85%;
-
-        border-radius: 5px 0 0 5px;
-    }
-
-    &:hover .post-time {
-        //background: #5858B0;
-        background: #BBB;
-        color: #333;
-    }
-
-    .post-title {
-        flex: 1;
-        padding-left: 1em;
-        background: $color-near-white;
-
-        text-decoration: none;
-
-        &, &:visited {
-            color: #333;
-        }
-    }
-
-    &:hover {
-        .post-title, .post-tags {
-            background: #EEE;
-        }
-    }
-
-    /* breadcrumb style for tags, inverse */
-    .post-tags {
-        display: flex;
-
-        padding-left: 1.49em;
-        overflow: hidden;
-
-        // same color as post-title
-        background: $color-near-white;
-    }
-
-    $tag-height: 3.2ex + 2*$entry-item-padding + 0.1ex;
-
-    a.post-tag {
-        position: relative;
-        text-align: center;
-        text-decoration: none;
-        padding-left: calc(#{$tag-height} * 0.414);
-        padding-right: calc(#{$tag-height} * 0.707);
-        min-height: 3ex;
-
-        &:last-child {
-            padding-right: .5em;
-            border-radius: 0 5px 5px 0;
-        }
-
-        //&:first-child::before {
-            //content: none;
-        //}
-
-        &::before {
-            border-radius: 0 100% 5px 0;
-            box-shadow: -2px 2px 0 2px rgba(255, 255, 255, 0.3), -3px 3px 0 2px rgba(0, 0, 0, 0.1);
-            content: "";
-            height: $tag-height;
-            width: $tag-height;
-            left: calc(-#{$tag-height}/2);
-            top: 0;
-            position: absolute;
-            transform: scale(0.707) rotate(45deg);
-        }
-
-        &, &::before {
-            background: #444;
-            color: white;
-        }
-
-        &:hover, &:hover::before {
-            background: #BBB;
-            color: #2F6EB6;
-        }
-    }
-}
-
 /* post entries, version 2*/
 
 // vertical bar
@@ -273,7 +173,7 @@ $entry-item-padding: .5ex;
         width: 6px;
         background: #666; // #333 with opacity 0.75
 
-        @media(max-width: $break-level-4) {
+        @media only screen and (max-width: $break-level-4) {
             content: none;
         }
     }
@@ -318,14 +218,20 @@ $post-time-space: 1em;
     font-size: 16px;
     line-height: 1.5;
     margin: 1.5em 0;
+    padding: 0 1.5em;
     position: relative;
     display: flex;
     align-items: center;
 
-    @media(max-width: $break-level-4) {
+    @media only screen and (max-width: $break-level-4) {
         flex-direction: column;
+        padding: 0;
+        margin: 3.5em 0;
         align-items: initial;
-        margin-right: 1.5em;
+
+        &:first-child {
+            margin-top: 0;
+        }
     }
 
     .post-time {
@@ -335,12 +241,14 @@ $post-time-space: 1em;
         margin-right: 1rem;
         position: absolute;
         right: 100%;
+        white-space: nowrap; // chrome needs this
 
-        @media(max-width: $break-level-4) {
-            position: relative;
+        @media only screen and (max-width: $break-level-4) {
+            order: 1;
+            margin: auto;
+            bottom: 0;
+            left: 0;
             right: auto;
-            //left: calc(1.5em + #{$outer-circle-radius} + #{$post-time-space});
-            left: 1.5em;
         }
 
         color: #CCC;
@@ -356,7 +264,7 @@ $post-time-space: 1em;
             left: calc(100% + 1rem + #{$vertical-bar-width}/2 - #{$outer-circle-radius});
             top: calc(50% - #{$outer-circle-radius});
 
-            @media(max-width: $break-level-4) {
+            @media only screen and (max-width: $break-level-4) {
                 content: none;
                 left: calc(-#{$post-time-space} - #{$outer-circle-radius});
             }
@@ -374,7 +282,7 @@ $post-time-space: 1em;
             left: calc(100% + 1rem + #{$vertical-bar-width}/2 - #{$inner-circle-radius});
             top: calc(50% - #{$inner-circle-radius});
 
-            @media(max-width: $break-level-4) {
+            @media only screen and (max-width: $break-level-4) {
                 content: none;
                 left: calc(-#{$post-time-space} - #{$inner-circle-radius});
             }
@@ -394,7 +302,7 @@ $post-time-space: 1em;
 
     .post-desc {
         flex: 1;
-        margin-left: calc(1rem + #{$vertical-bar-width});
+        //padding-left: calc(1rem + #{$vertical-bar-width});
 
 
         // style for post-title
@@ -435,11 +343,21 @@ $post-time-space: 1em;
             }
         }
 
+        // hide tags when screen is too small
+        @media only screen and (max-width: $break-level-2) {
+            .post-tags {
+                display: none;
+            }
+            .post-categories {
+                margin: 0;
+            }
+        }
+
         // style for post description
         .post-content {
             padding-left: 2em;
 
-            @media(max-width: $break-level-4) {
+            @media only screen and (max-width: $break-level-4) {
                 padding-left: 0;
             }
 
@@ -535,7 +453,7 @@ footer#footer {
             padding: 1em 0;
         }
 
-        @media(max-width: $break-level-3) {
+        @media only screen and (max-width: $break-level-3) {
             flex-direction: column;
             align-items: center;
 
@@ -545,6 +463,7 @@ footer#footer {
 
             .footer {
                 padding: .5em .2em;
+                text-align: center
             }
         }
     }
@@ -617,7 +536,7 @@ footer#footer {
         }
     }
 
-    @media(max-width: $break-level-3) {
+    @media only screen and (max-width: $break-level-3) {
         flex-wrap: wrap;
 
         .post-tags, .post-categories {
