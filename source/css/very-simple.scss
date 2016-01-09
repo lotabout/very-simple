@@ -9,14 +9,34 @@ html, body {
 }
 
 /**
+ * responsive breaks
+ */
+$break-level-1: 320px;
+$break-level-2: 360px;
+$break-level-3: 768px;
+$break-level-4: 900px; // > 900px timeline will work.
+$break-level-5: 980px;
+
+/* 980px work fine */
+
+/**
  * Global settings of layout
  */
 
 .container {
+    box-sizing: border-box;
     margin: auto;
     width: 100%;
     max-width: 720px;
+
+    @media(max-width: $break-level-5) {
+        max-width: 680px;
+    }
+    @media(max-width: $break-level-3) {
+        max-width: 95%;
+    }
 }
+
 
 body {
     display: flex;
@@ -64,6 +84,10 @@ nav {
     font-family: $font-mono;
     font-size: 1em;
     z-index: 10;
+
+    @media(max-width: $break-level-2) {
+        position: static;
+    }
 }
 
 #nav {
@@ -243,6 +267,10 @@ $entry-item-padding: .5ex;
         height: 100%;
         width: 6px;
         background: #666; // #333 with opacity 0.75
+
+        @media(max-width: $break-level-4) {
+            content: none;
+        }
     }
 }
 
@@ -280,7 +308,7 @@ $entry-item-padding: .5ex;
 
 $outer-circle-radius: 10px;
 $inner-circle-radius: 8px;
-
+$post-time-space: 1em;
 .post-entry {
     font-size: 16px;
     line-height: 1.5;
@@ -288,6 +316,12 @@ $inner-circle-radius: 8px;
     position: relative;
     display: flex;
     align-items: center;
+
+    @media(max-width: $break-level-4) {
+        flex-direction: column;
+        align-items: initial;
+        margin-right: 1.5em;
+    }
 
     .post-time {
         flex: none;
@@ -297,6 +331,13 @@ $inner-circle-radius: 8px;
         position: absolute;
         right: 100%;
 
+        @media(max-width: $break-level-4) {
+            position: relative;
+            right: auto;
+            //left: calc(1.5em + #{$outer-circle-radius} + #{$post-time-space});
+            left: 1.5em;
+        }
+
         color: #CCC;
         transition: color .2s ease-in-out;
 
@@ -305,10 +346,16 @@ $inner-circle-radius: 8px;
             position: absolute;
             width: 20px;
             height: 20px;
-            left: calc(100% + 1rem + #{$vertical-bar-width}/2 - #{$outer-circle-radius});
-            top: calc(50% - #{$outer-circle-radius});
             background: #666; // #333 with opacity 0.75
             border-radius: 100%;
+            left: calc(100% + 1rem + #{$vertical-bar-width}/2 - #{$outer-circle-radius});
+            top: calc(50% - #{$outer-circle-radius});
+
+            @media(max-width: $break-level-4) {
+                content: none;
+                left: calc(-#{$post-time-space} - #{$outer-circle-radius});
+            }
+
         }
 
         &::after {
@@ -316,11 +363,16 @@ $inner-circle-radius: 8px;
             position: absolute;
             width: 16px;
             height: 16px;
-            left: calc(100% + 1rem + #{$vertical-bar-width}/2 - #{$inner-circle-radius});
-            top: calc(50% - #{$inner-circle-radius});
             background: #FCF9E8;
             border-radius: 100%;
             transition: background-color .2s ease-in-out;
+            left: calc(100% + 1rem + #{$vertical-bar-width}/2 - #{$inner-circle-radius});
+            top: calc(50% - #{$inner-circle-radius});
+
+            @media(max-width: $break-level-4) {
+                content: none;
+                left: calc(-#{$post-time-space} - #{$inner-circle-radius});
+            }
         }
     }
 
@@ -381,6 +433,10 @@ $inner-circle-radius: 8px;
         // style for post description
         .post-content {
             padding-left: 2em;
+
+            @media(max-width: $break-level-4) {
+                padding-left: 0;
+            }
 
             p {
                 margin: 0.6em 0 0 0;
@@ -451,7 +507,6 @@ footer#footer {
         //flex-wrap: wrap;
 
         .social {
-            flex: 1;
             display: flex;
             align-items: center;
             //justify-content: center;
@@ -471,8 +526,21 @@ footer#footer {
         }
 
         .footer {
-            flex: 2;
+            flex: 1;
             padding: 1em 0;
+        }
+
+        @media(max-width: $break-level-3) {
+            flex-direction: column;
+            align-items: center;
+
+            .social {
+                padding: .5em .2em;
+            }
+
+            .footer {
+                padding: .5em .2em;
+            }
         }
     }
 }
@@ -511,6 +579,7 @@ footer#footer {
         font-size: 14px;
     }
 
+
     .post-tags, .post-categories {
         &::before {
             font-family: FontAwesome;
@@ -530,19 +599,26 @@ footer#footer {
     }
 
     .post-tags {
+        margin-left: 1em;
         &::before {
             content: "\f02c";
         }
     }
 
     .post-categories {
-        margin-left: 1em;
         &::before {
             content: "\f07b";
             font-family: FontAwesome;
         }
     }
 
+    @media(max-width: $break-level-3) {
+        flex-wrap: wrap;
+
+        .post-tags, .post-categories {
+            margin-left: auto;
+        }
+    }
 }
 
 
