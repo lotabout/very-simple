@@ -450,16 +450,22 @@ footer#footer {
     background: #333;
 
     &, & a, & a:visited {
-        color: white;
+        color: #AAA;
+    }
+
+    & a:hover {
+        color: #EEE;
     }
 
     .bar {
         display: flex;
-        flex-wrap: wrap;
+        //flex-wrap: wrap;
 
         .social {
+            flex: 1;
             display: flex;
             align-items: center;
+            //justify-content: center;
             a {
                 display: inline-block;
                 padding: 6px 12px;
@@ -474,11 +480,11 @@ footer#footer {
                 }
             }
         }
-    }
 
-    .footer {
-        padding: 1em 0;
-        flex: 1
+        .footer {
+            flex: 2;
+            padding: 1em 0;
+        }
     }
 }
 

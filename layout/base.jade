@@ -50,10 +50,12 @@ html
             +social_icon('googleplus', 'https://plus.google.com/', 'fa-google-plus')
             +social_icon('rss', "", "fa-rss")
 
-          .footer= '© '
-            a(href='/', rel='nofollow')= config.title + '.'
-            |  Powered by
-            a(rel='nofollow', target='_blank', href='https://hexo.io')  Hexo.
+          .footer
+            - var year = date(new Date(), 'YYYY');
+            = '© ' + year + ' '
+            a(href='/', rel='nofollow')= config.title
+            = '. Powered by '
+            a(rel='nofollow', target='_blank', href='https://hexo.io') Hexo.
 
     if theme.fancybox
       link(rel='stylesheet', type='text/css', href=root + '/fancybox/jquery.fancybox.css')
