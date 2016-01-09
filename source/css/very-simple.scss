@@ -305,15 +305,8 @@ $inner-circle-radius: 8px;
 
     .post-desc {
         flex: 1;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
         margin-left: calc(1rem + #{$vertical-bar-width});
 
-        .post-title, .post-tags, .post-categories, .post-description {
-            flex: none;
-            flex-basis: 100%;
-        }
 
         // style for post-title
         .post-title {
@@ -335,8 +328,14 @@ $inner-circle-radius: 8px;
             }
         }
 
-        // style for post-tags
+        // style for post-meta
+        .post-meta {
+            text-align: right;
+        }
+
         .post-tags {
+            display: inline-block;
+            margin-left: .5rem;
             text-align: right;
             color: #666;
             opacity: .6;
@@ -355,7 +354,7 @@ $inner-circle-radius: 8px;
                 text-decoration: none;
                 outline: none;
                 color: #666;
-                margin: 0 .6rem;
+                margin: 0 .3rem;
                 &:hover {
                     color: #333;
                     border-bottom: 2px solid #666;
@@ -364,18 +363,6 @@ $inner-circle-radius: 8px;
                 // add decoration
                 position: relative;
                 transition: border .2s ease-in-out;
-                &::after {
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    left: calc(100% + .3rem + 3px);
-                    top: calc(50% - 3px);
-                    height: 6px;
-                    width: 6px;
-                    background: #666;
-                    opacity: 0.5;
-                }
-
                 &:last-child::after{
                     content: none;
                 }
