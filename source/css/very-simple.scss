@@ -246,6 +246,38 @@ $entry-item-padding: .5ex;
     }
 }
 
+// template style for tags of post
+.post-tags-template {
+    display: inline-block;
+    margin-left: .5rem;
+    text-align: right;
+    color: #666;
+    opacity: .6;
+    transition: opacity .3s ease-in-out;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &::before {
+        content: "\f02c";
+        font-family: FontAwesome;
+    }
+
+    a{
+        text-decoration: none;
+        outline: none;
+        color: #666;
+        margin: 0 .3rem;
+        &:hover {
+            color: #333;
+            border-bottom: 2px solid #666;
+        }
+
+        transition: border .2s ease-in-out;
+    }
+}
+
 $outer-circle-radius: 10px;
 $inner-circle-radius: 8px;
 
@@ -334,44 +366,12 @@ $inner-circle-radius: 8px;
         }
 
         .post-tags {
-            display: inline-block;
-            margin-left: .5rem;
-            text-align: right;
-            color: #666;
-            opacity: .6;
-            transition: opacity .3s ease-in-out;
-
-            &:hover {
-                opacity: 1;
-            }
-
-            &::before {
-                content: "\f02c";
-                font-family: FontAwesome;
-            }
-
-            a{
-                text-decoration: none;
-                outline: none;
-                color: #666;
-                margin: 0 .3rem;
-                &:hover {
-                    color: #333;
-                    border-bottom: 2px solid #666;
-                }
-
-                // add decoration
-                position: relative;
-                transition: border .2s ease-in-out;
-                &:last-child::after{
-                    content: none;
-                }
-            }
+            @extend .post-tags-template;
         }
 
         // style for post-categories
         .post-categories {
-            @extend .post-tags;
+            @extend .post-tags-template;
 
             &::before {
                 content: "\f07b";
@@ -488,47 +488,61 @@ footer#footer {
 
 /* post header meta data(time/tag) */
 .wrapper .meta {
-    display: flex;
+    //display: flex;
+    //box-sizing: border-box;
+    //padding: 0 20px;
+    text-align: right;
     background: #333;
-    color: #EEE;
-    box-sizing: border-box;
-    padding: 0 20px;
+    color: #CCC;
+    border-top: 2px solid #555;
+    border-bottom: 2px solid #555;
+    display: flex;
+    box-shadow: 0 0 2px 1px rgba(200, 200, 200, 0.8);
+    transition: background-color .2s ease-in-out;
 
-    .post-time {
-        opacity: 0.8;
-        margin-left: 1em;
+    &:hover {
+        background: #222;
     }
 
-    .post-tags {
+    .post-time {
         flex: 1;
+        text-align: left;
+        font-family: $font-mono;
+        font-size: 14px;
+    }
 
-        a.tag {
-            position: relative;
-            padding: 3px 10px;
-            background: $color-underscore;
+    .post-tags, .post-categories {
+        &::before {
+            font-family: FontAwesome;
+        }
+
+        a {
+            color: #CCC;
             text-decoration: none;
-
-            color: rgba(60,60,60,0.8);
+            margin: 0 .3rem;
+            transition: border-bottom .3s ease-in-out, color .2s ease-in-out;
 
             &:hover {
-                z-index: 1;
-                transition: box-shadow .3s;
-                box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5);
+                color: $color-underscore;
+                border-bottom: 2px solid $color-underscore;
             }
         }
     }
 
-    .post-categories a.category {
-        background: $color-underscore;
-        text-decoration: none;
-        color: rgba(60,60,60,0.8);
-        padding: 0 5px;
-        &:hover {
-            z-index: 1;
-            transition: box-shadow .3s;
-            box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5);
+    .post-tags {
+        &::before {
+            content: "\f02c";
         }
     }
+
+    .post-categories {
+        margin-left: 1em;
+        &::before {
+            content: "\f07b";
+            font-family: FontAwesome;
+        }
+    }
+
 }
 
 

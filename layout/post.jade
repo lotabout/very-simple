@@ -17,16 +17,22 @@ block main
 
   .wrapper
     .container.meta
-      .post-tags
-        if page.tags
-          for tag in page.tags.toArray()
-            a.tag(href=url_for(tag.path))= tag.name
-      .post-categories
-        if page.categories
-          for category in page.categories.toArray()
-            a.category(href=url_for(category.path))= category.name
-
       .post-time= page.date.format(config.date_format)
+      if (page.tags && page.tags.length)
+        .post-tags
+          != list_tags(page.tags, {show_count: false, class: 'post-tag', style:'none', separator:'/'})
+      if (page.categories && page.categories.length)
+        .post-categories
+          != list_categories(page.categories, {show_count: false, class: 'post-category', style: 'none', separator: '>'})
+      //.post-tags
+      //  if page.tags
+      //    for tag in page.tags.toArray()
+      //      a.tag(href=url_for(tag.path))= tag.name
+      //.post-categories
+      //  if page.categories
+      //    for category in page.categories.toArray()
+      //      a.category(href=url_for(category.path))= category.name
+
 
   article
     .container.post
