@@ -330,6 +330,8 @@ $inner-circle-radius: 8px;
                 color: #333;
                 text-decoration: none;
                 border: none;
+                display: block;
+                min-height: 1ex;
             }
         }
 
@@ -405,7 +407,7 @@ $inner-circle-radius: 8px;
     margin: 3.5ex 0;
     overflow: hidden;
     text-align: center;
-    border: 1px solid #DDD;
+    border-bottom: 2px solid #CCC;
     color: #777;
 
     * {
