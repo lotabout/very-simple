@@ -323,6 +323,8 @@ $inner-circle-radius: 8px;
         .post-title {
             border-bottom: 1px solid #EEE;
             transition: border-color .2s ease;
+            font-weight: 600;
+            font-size: 1.2em;
 
             &:hover {
                 border-bottom: 1px solid #666;
@@ -331,6 +333,61 @@ $inner-circle-radius: 8px;
             a {
                 color: #333;
                 text-decoration: none;
+            }
+        }
+
+        // style for post-tags
+        .post-tags {
+            text-align: right;
+            color: #666;
+            opacity: .6;
+            transition: opacity .3s ease-in-out;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &::before {
+                content: "\f02c";
+                font-family: FontAwesome;
+            }
+
+            a.post-tag {
+                text-decoration: none;
+                color: #666;
+                margin: 0 .6rem;
+                &:hover {
+                    color: #333;
+                    border-bottom: 2px solid #666;
+                }
+
+                // add decoration
+                position: relative;
+                transition: border .2s ease-in-out;
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    left: calc(100% + .3rem + 3px);
+                    top: calc(50% - 3px);
+                    height: 6px;
+                    width: 6px;
+                    background: #666;
+                    opacity: 0.5;
+                }
+
+                &:last-child::after{
+                    content: none;
+                }
+            }
+        }
+
+        // style for post description
+        .post-content {
+            padding-left: 2em;
+
+            p {
+                margin: 0.6em 0 0 0;
             }
         }
     }
