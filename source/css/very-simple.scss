@@ -265,6 +265,9 @@ $inner-circle-radius: 8px;
         position: absolute;
         right: 100%;
 
+        color: #CCC;
+        transition: color .2s ease-in-out;
+
         &::before {
             content: '';
             position: absolute;
@@ -290,8 +293,13 @@ $inner-circle-radius: 8px;
     }
 
     &:hover {
-        .post-time::after {
-            background: $color-underscore;
+        .post-time{
+            //border-bottom: 2px solid $color-underscore;
+            color: #666;
+
+            &::after {
+                background: #A1EFE9;
+            }
         }
     }
 
@@ -309,6 +317,21 @@ $inner-circle-radius: 8px;
 
         .post-tags .tag {
             display: inline-block;
+        }
+
+        // style for post-title
+        .post-title {
+            border-bottom: 1px solid #EEE;
+            transition: border-color .2s ease;
+
+            &:hover {
+                border-bottom: 1px solid #666;
+            }
+
+            a {
+                color: #333;
+                text-decoration: none;
+            }
         }
     }
 }
