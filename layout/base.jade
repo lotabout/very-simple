@@ -43,7 +43,7 @@ html
 
     // Blog title and subtitle
     header: .container.header
-      a#logo.title(href=root)= config.title
+      a#logo.title(href=url_for('.'))= config.title
       span.subtitle= config.subtitle
       label#toggle-menu(for="menu", onclick)
         i.fa.fa-bars
