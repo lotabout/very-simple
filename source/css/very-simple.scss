@@ -305,9 +305,10 @@ $post-time-space: 1em;
         margin-right: 1rem;
         position: absolute;
         right: 100%;
-        white-space: nowrap; // chrome needs this
         color: #CCC;
         transition: color .2s ease-in-out;
+        white-space: nowrap; // chrome needs this
+        top: 50%; // chrome will need this to center vertically
 
         @media only screen and (max-width: $break-level-4) {
             order: 1;
@@ -317,6 +318,7 @@ $post-time-space: 1em;
             right: auto;
             color: #666;
             opacity: .6;
+            top: auto;
         }
 
         &::before {
