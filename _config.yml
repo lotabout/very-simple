@@ -1,5 +1,6 @@
 # Header
 menu:
+  ## If your site is put in a subdirectory, set Home as '/child/'
   Home: /
   Archives: archives
 
@@ -7,7 +8,7 @@ social:
     rss: /atom.xml
 
 # Content
-fancybox: false
+fancybox: false # set to true if you want to use it
 
 duoshuo: #duoshuo_shortname
 disqus: #disqus _shortname
