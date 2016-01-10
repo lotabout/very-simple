@@ -313,7 +313,7 @@ $post-time-space: 1em;
         @media only screen and (max-width: $break-level-4) {
             order: 1;
             margin: auto;
-            bottom: 0;
+            bottom: .2ex;
             left: 0;
             right: auto;
             color: #666;
@@ -395,6 +395,11 @@ $post-time-space: 1em;
         // style for post-meta
         .post-meta {
             text-align: right;
+            min-height: 2em;
+            display: flex;
+            align-items: flex-end;
+            flex-direction: row-reverse;
+            justify-content: flex-start;
         }
 
         .post-tags {
