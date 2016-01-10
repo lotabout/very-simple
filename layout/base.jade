@@ -8,6 +8,14 @@ if (config.root != '/')
 else
   - var root = ''
 
+if config.feed
+  case config.feed.type
+    when "rss2"
+      - var feed_type='application/rss+xml'
+    when "atom"
+    default
+      - var feed_type='application/atom+xml'
+
 include _partial/helpers
 
 doctype html
@@ -24,6 +32,9 @@ html
     link(rel='stylesheet', type='text/css', href=root + '/css/highlight.css')
     link(rel='stylesheet', type='text/css', href=root + '/css/very-simple.css')
     link(rel='stylesheet', type='text/css', href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css")
+    link(rel='Shortcut Icon', type='image/x-icon',href=url_for('favicon.ico'))
+    if config.feed
+      link(rel='alternate', type=feed_type, href=url_for(config.feed.path))
 
   body
 
