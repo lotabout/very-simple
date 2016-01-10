@@ -35,19 +35,4 @@ block main
                 .post-categories
                   != list_categories(post.categories, {show_count: false, class: 'post-category', style: 'none', separator: '>'})
 
-        //.entry
-        //  span.post-time= post.date.format(config.date_format)
-
-        //  // support link post without title
-        //  if post.link
-        //      a.post-title(href=url_for(post.link),target="_blank", itemprop="url")
-        //          = post.title
-        //  else
-        //      a.post-title(href=url_for(post.path))
-        //          = post.title
-
-        //  .post-tags
-        //    for tag in post.tags.toArray()
-        //      a.post-tag(href=url_for(tag.path))= tag.name
-
   include _partial/paginator.jade

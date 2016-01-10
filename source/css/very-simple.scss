@@ -13,7 +13,7 @@ html, body {
  * responsive breaks
  */
 $break-level-1: 320px;
-$break-level-2: 360px;
+$break-level-2: 414px;
 $break-level-3-1: 680px;
 $break-level-3: 768px;
 $break-level-4: 900px; // > 900px timeline will work.
@@ -306,6 +306,8 @@ $post-time-space: 1em;
         position: absolute;
         right: 100%;
         white-space: nowrap; // chrome needs this
+        color: #CCC;
+        transition: color .2s ease-in-out;
 
         @media only screen and (max-width: $break-level-4) {
             order: 1;
@@ -313,10 +315,9 @@ $post-time-space: 1em;
             bottom: 0;
             left: 0;
             right: auto;
+            color: #666;
+            opacity: .6;
         }
-
-        color: #CCC;
-        transition: color .2s ease-in-out;
 
         &::before {
             content: '';
@@ -433,12 +434,22 @@ $post-time-space: 1em;
 }
 
 /* paginator */
+
+// make it occupy all width
+.page-navigator-wrapper {
+    @media only screen and (max-width: $break-level-3) {
+        max-width: 100%;
+    }
+}
 .page-navigator {
     margin: 3.5ex 0;
     overflow: hidden;
     text-align: center;
     border-bottom: 2px solid #CCC;
     color: #777;
+    @media only screen and (max-width: $break-level-3) {
+        border-top: 2px solid #CCC;
+    }
 
     * {
         padding: 1px 20px;
@@ -555,6 +566,12 @@ footer#footer {
     display: flex;
     box-shadow: 0 0 2px 1px rgba(200, 200, 200, 0.8);
     transition: background-color .2s ease-in-out;
+    margin-bottom: 2em;
+
+    // show full width on small screen
+    @media only screen and (max-width: $break-level-2) {
+        max-width: 100%;
+    }
 
     &:hover {
         background: #222;
