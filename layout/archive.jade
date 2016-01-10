@@ -6,6 +6,21 @@ block main
       if page.category || page.tag
           h1.label-title=  (page.category || page.tag)
       .post
+        // show all categories and tags
+        if !(page.category || page.tag)
+            .all-categories
+              ul.tag-box.list-unstyled
+                for category in site.categories.sort('name').toArray()
+                  li
+                    a(href='/categories/'+category.name)= category.name
+                      span= category.posts.length
+            .all-tags
+              ul.tag-box.list-unstyled
+                for tag in site.tags.sort('name').toArray()
+                  li
+                    a(href='/tags/'+tag.name)= tag.name
+                      span= tag.posts.length
+
         .post-archive
             //Use lodash to classify posts. See https://lodash.com/docs#groupBy
             each posts, year in _.groupBy(page.posts.toArray(), function(p){return -p.date.format('YYYY')})

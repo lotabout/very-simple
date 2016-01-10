@@ -826,3 +826,56 @@ article {
         }
     }
 }
+
+// category/tags on archive page
+.list-unstyled {
+    list-style: outside none none;
+    padding-left: 0;
+}
+
+.all-categories, .all-tags {
+    &::before {
+        font-family: FontAwesome;
+        float: left;
+        margin-right: 1em;
+    }
+
+    ul.tag-box {
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            a {
+                display: inline;
+                text-decoration: none;
+                border: 1px dashed #CCC;
+                border-radius: 3px;
+                margin: .2em;
+                padding: .1em .3em;
+                outline: none;
+
+                transition: none;
+
+                span {
+                    font-size: 0.8em;
+                    border-left: 1px solid #CCC;
+                    margin-left: .3em;
+                    padding: 0 .3em;
+                }
+
+                &:hover {
+                    background: #666;
+                    color: #EEE;
+                }
+            }
+        }
+    }
+}
+
+.all-categories::before {
+    content: "\f07b";
+}
+
+.all-tags::before {
+    content: "\f02c";
+}
