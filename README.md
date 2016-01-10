@@ -24,7 +24,11 @@ menu:
   Home: /
   Archives: archives
 social:
-    rss: /atom.xml
+  email:
+  twitter:
+  github:
+  googleplus:
+  rss: /atom.xml
 fancybox: false
 duoshuo: #duoshuo_shortname
 disqus: #disqus _shortname
@@ -43,11 +47,42 @@ disqus: #disqus _shortname
 
 ##Features
 
+#### Logo
+You can set a **favicon.ico** for your website, please put it into  `source` folder of hexo directory, recommended size: 32px*32px.
+
 #### Pages
 
-To customize pages, such as traditional 'About' page, just create a new page
-`about.md` in `/source`, and then add link to the page to `menu` configuration that
-we described in previous section.
+To customize pages, such as traditional 'About' page, follow the following
+steps:
+
+1. create a directory `about/` under `/source`
+2. create a corresponding index page `index.md` under directory `about/`.
+3. add link to the page to `menu` configuration:
+
+    menu:
+      About: about
+
+Note that you don't need to add directory and create `about.md` under
+`/source`. But the configuration should changed to:
+
+```
+    menu:
+      About: about.html
+```
+
+#### Comments
+
+You can control whether to show comment system(default to enabled) in pages.
+Just add `comments: true` or `comments: false` in `front-matter` section of
+page. i.e.
+
+```
+title: About
+date: 2013-12-26 22:52:56
+layout: page
+comments: true
+---
+```
 
 #### Excerpt
 You can control the abstract of a post shown at index, by either filling a
