@@ -5,10 +5,14 @@ menu:
   Archives: archives
 
 social:
-    rss: /atom.xml
+  email:
+  twitter:
+  github:
+  googleplus:
+  rss: /atom.xml
 
 # Content
-fancybox: false # set to true if you want to use it
+fancybox: true # set to true if you want to use it
 
 duoshuo: #duoshuo_shortname
 disqus: #disqus _shortname

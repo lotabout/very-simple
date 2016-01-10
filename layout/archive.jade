@@ -1,5 +1,13 @@
 extends base
 
+block title
+  if page.category
+     title= page.category + " | " + config.title
+  if page.tag
+     title= page.tag + " | " + config.title
+  if page.archive
+     title= __('archive') + " | " + config.title
+
 block main
   article
     .container
