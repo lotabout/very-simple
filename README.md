@@ -20,6 +20,7 @@ Edit `_config.yml` in hexo root, change `theme` to `very-simple`.
 Default config:
 
 ```
+# very-simple/_config.yml
 menu:
   Home: /
   Archives: archives
@@ -29,7 +30,7 @@ social:
   github:
   googleplus:
   rss: /atom.xml
-fancybox: false
+fancybox: true
 duoshuo: #duoshuo_shortname
 disqus: #disqus _shortname
 ```
@@ -44,6 +45,28 @@ disqus: #disqus _shortname
 - fancybox - Enable [Fancybox](http://fancyapps.com/fancybox/)
 - duoshuo - [Duoshuo](http://duoshuo.com) shortname
 - disqus - [Disqus](https://disqus.com) shortname
+
+If you want to contain this theme only as a submodule, then you may be
+unwilling to keep all configuration inside theme
+folder(`very-simple/_config.yml`). In this case, you can keep the
+configurations in root configuration file `/_config.yml` by:
+
+```
+# /_config.yml
+very_simple:
+  menu:
+    Home: /
+    Archives: archives
+  social:
+    email:
+    twitter:
+    github:
+    googleplus:
+    rss: /atom.xml
+  fancybox: true
+  duoshuo: #duoshuo_shortname
+  disqus: #disqus _shortname
+```
 
 ##Features
 
@@ -85,8 +108,8 @@ comments: true
 ```
 
 #### Excerpt
-You can control the abstract of a post shown at index, by either filling a
-`description:` item in `front-matter` of the `post.md`, or just inserting a
-`<!--more-->` before your hidden content.
+You can control the abstract of a post shown at index, by:
 
-Otherwise it will fetch the first paragraph as excerpt.
+1. Filling a `description:` item in `front-matter` of the `post.md`
+2. Just inserting a `<!--more-->` before your hidden content.
+3. Otherwise it will fetch the first paragraph as excerpt.

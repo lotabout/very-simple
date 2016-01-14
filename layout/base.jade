@@ -16,6 +16,9 @@ if config.feed
     default
       - var feed_type='application/atom+xml'
 
+if config.very_simple
+    - for (var key in config.very_simple) { theme[key] = config.very_simple[key]; }
+
 include _partial/helpers
 
 doctype html
