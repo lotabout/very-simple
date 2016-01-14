@@ -4,7 +4,7 @@
 
 # Site
 title: Hexo
-subtitle:
+subtitle: Hexo Subtitle
 description:
 author: John Doe
 language:
@@ -12,8 +12,8 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
-root: /
+url: https://lotabout.github.io
+root: /very-simple/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -63,9 +63,32 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: landscape
+theme: very-simple
+
+
+very_simple:
+  menu:
+    ## If your site is put in a subdirectory, set Home as '/child/'
+    Home: /very-simple/
+    Archives: archives
+    About: about.html
+
+  social:
+    email: lotabout@gmail.com
+    twitter:
+    github: lotabout
+    googleplus:
+    rss: /very-simple/atom.xml
+
+  # Content
+  fancybox: true # set to true if you want to use it
+
+  duoshuo: #duoshuo_shortname
+  disqus: #disqus _shortname
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: https://github.com/lotabout/very-simple
+  branch: gh-pages
