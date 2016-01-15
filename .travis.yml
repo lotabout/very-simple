@@ -1,0 +1,30 @@
+language: node_js
+node_js:
+- '0.12'
+branches:
+  only:
+  - master
+before_install:
+- git remote set-branches --add origin source
+- git remote update
+- git checkout -b source --track origin/source
+- npm install -g hexo-cli
+install:
+- npm install
+script:
+- git submodule init
+- git submodule update
+- cd themes/very-simple
+- git remote update
+- git reset --hard origin/master
+- cd ../..
+- hexo generate
+after_success:
+- ls
+- git config --global user.name "Mark Wallace"
+- git config --global user.email "lotabout@gmail.com"
+- sed -i'' "/^ *repo/s~github\.com~${GH_TOKEN}@github.com~" _config.yml
+- hexo deploy --silent
+env:
+  global:
+    secure: KUGEVht64ZtiWawczc88iFkfIrbE2Wfe/M6MLPzi3jNYp7ogwG9JOWXkSvrNJlqSv+/9nQXU+DHcUHZ92Vjy34KK3l+p6MePT+Vy1FJ76nsqHQomgEJlA4H98gJMXpO3ix8DvUkJxknpahMFEJw6wVKFUkTg6tYvZPaqAsZpFlHdryXxQ497vpyKTLfAmMBTp00K6ubJny2jbMjylnEhhIFaBddRcA061xtIyMa2IZu6EHp4hwdWrVWxZ+Bhe0wZHvnfMKVsF3fC0yV1FXt8fXRkjXDqIMEDiFeSgs+QTgAMojdg5vG0bSB4Zoq26r+YUDYUv3hcYCjnmA/YAylHAYzNgb9xShIvQ5bw62J3DCHc5X0fo9waedV045Aw3jkCUAwQbVRXRNhYQbDoH/2Vkm1KkpA75j0DPnndAJ0Gd5cK8YDv65xopbKT/lwrLE1lLqiX2vNctuSvoXTr9ewkosiTQ6QdljNAoLGKfFzyWT9OJ5hDie1M7BtZ6c9aoXYTQmfBhRstYHWVB/BH0VNeufzT6ktcAzIvZESxBettupU5Zl1iqXkApShqCKYJRPTJkh+J3Xo7CvoxHZeLMdKhSXKLM6XL8Y9HWuYP+kVh/w6YkMUU7F/xexdPEFGOymuf8BAmrhqI4y5TL0N6fqmpujliEbD5p0eSBwtnf3l+2uw=
