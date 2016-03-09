@@ -1,5 +1,15 @@
 if theme.duoshuo
-    .ds-thread(data-thread-key=page.path, data-title=page.title, data-url=page.permalink, data-author-key='1')
+  .ds-thread(data-thread-key=page.path, data-title=page.title, data-url=page.permalink)
+  script.
+      var duoshuoQuery = {short_name:'#{theme.duoshuo}'};
+      (function() {
+          var ds = document.createElement('script');
+          ds.type = 'text/javascript';ds.async = true;
+          ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+          ds.charset = 'UTF-8';
+          (document.getElementsByTagName('head')[0]
+              || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
 
 if theme.disqus
   #disqus_thread
