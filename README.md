@@ -68,6 +68,7 @@ very_simple:
   fancybox: true
   duoshuo: #duoshuo_shortname
   disqus: #disqus _shortname
+  google_analytics: #Google Analytics Tracking Code
 ```
 
 ##Features
