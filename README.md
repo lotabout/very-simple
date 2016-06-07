@@ -33,6 +33,7 @@ social:
 fancybox: true
 duoshuo: #duoshuo_shortname
 disqus: #disqus _shortname
+google_analytics: #Google Analytics Tracking Code
 ```
 
 - menu - The navigation links on the header
