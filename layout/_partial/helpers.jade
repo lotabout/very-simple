@@ -11,3 +11,4 @@ mixin social_icon(type, website, icon)
   if ((config.social && config.social[type]) || (theme.social && theme.social[type]))
     a(href=website + ((config.social && config.social[type]) || (theme.social && theme.social[type])), target="_blank")
       i.fa(class=icon)
+
