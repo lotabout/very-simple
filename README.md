@@ -33,6 +33,7 @@ social:
 fancybox: true
 duoshuo: #duoshuo_shortname
 disqus: #disqus _shortname
+google_analytics: #Google Analytics Tracking Code
 ```
 
 - menu - The navigation links on the header
@@ -45,6 +46,7 @@ disqus: #disqus _shortname
 - fancybox - Enable [Fancybox](http://fancyapps.com/fancybox/)
 - duoshuo - [Duoshuo](http://duoshuo.com) shortname
 - disqus - [Disqus](https://disqus.com) shortname
+- google_analytics - Google Analytics Tracking Code
 
 If you want to contain this theme only as a submodule, then you may be
 unwilling to keep all configuration inside theme
@@ -66,6 +68,7 @@ very_simple:
   fancybox: true
   duoshuo: #duoshuo_shortname
   disqus: #disqus _shortname
+  google_analytics: #Google Analytics Tracking Code
 ```
 
 ##Features
