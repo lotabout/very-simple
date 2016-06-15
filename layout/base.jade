@@ -40,14 +40,12 @@ html
       link(rel='alternate', type=feed_type, href=url_for(config.feed.path))
       
     if theme.google_adsense_page_level_ads
-    script.
-        (<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-         <script>
+      script(async, src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
+      script.  
          (adsbygoogle = window.adsbygoogle || []).push({
-          google_ad_client: #{theme.google_adsense_page_level_ads},
+          google_ad_client: "#{theme.google_adsense_page_level_ads}",
           enable_page_level_ads: true
           });
-         </script>);
 
   body
 
