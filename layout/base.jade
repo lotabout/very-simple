@@ -38,6 +38,16 @@ html
     link(rel='Shortcut Icon', type='image/x-icon',href=url_for('favicon.ico'))
     if config.feed
       link(rel='alternate', type=feed_type, href=url_for(config.feed.path))
+      
+    if theme.google_adsense_page_level_ads
+    script.
+        (<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+         <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: #{theme.google_adsense_page_level_ads},
+          enable_page_level_ads: true
+          });
+         </script>);
 
   body
 
