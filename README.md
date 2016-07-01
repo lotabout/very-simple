@@ -34,6 +34,7 @@ fancybox: true
 duoshuo: #duoshuo_shortname
 disqus: #disqus _shortname
 google_analytics: #Google Analytics Tracking Code
+google_adsense_page_level_ads: #Google Adsense Page Level Ads Code
 ```
 
 - menu - The navigation links on the header
@@ -47,6 +48,7 @@ google_analytics: #Google Analytics Tracking Code
 - duoshuo - [Duoshuo](http://duoshuo.com) shortname
 - disqus - [Disqus](https://disqus.com) shortname
 - google_analytics - Google Analytics Tracking Code
+- google_adsense_page_level_ads: - Google Adsense Page Level Ads Code
 
 If you want to contain this theme only as a submodule, then you may be
 unwilling to keep all configuration inside theme
@@ -69,6 +71,7 @@ very_simple:
   duoshuo: #duoshuo_shortname
   disqus: #disqus _shortname
   google_analytics: #Google Analytics Tracking Code
+  google_adsense_page_level_ads: #Google Adsense Page Level Ads Code
 ```
 
 ##Features

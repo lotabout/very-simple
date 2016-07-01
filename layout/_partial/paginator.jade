@@ -1,4 +1,4 @@
 .container.page-navigator-wrapper
   if page.total > 1
     .page-navigator
-      != paginator({prev_text: '&laquo; Prev', next_text: 'Next &raquo;', base: page.base || config.root})
+      != paginator({prev_text: '&laquo; Prev', next_text: 'Next &raquo;', base: page.base})

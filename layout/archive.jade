@@ -20,13 +20,13 @@ block main
               ul.tag-box.list-unstyled
                 for category in site.categories.sort('name').toArray()
                   li
-                    a(href='/categories/'+category.name)= category.name
+                    a(href=root+'categories/'+category.name)= category.name
                       span= category.posts.length
             .all-tags
               ul.tag-box.list-unstyled
                 for tag in site.tags.sort('name').toArray()
                   li
-                    a(href='/tags/'+tag.name)= tag.name
+                    a(href=root+'tags/'+tag.name)= tag.name
                       span= tag.posts.length
 
         .post-archive
