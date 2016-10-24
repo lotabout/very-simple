@@ -2,13 +2,7 @@ extends base
 - var current_title = page.title || tag.name || category.name || site.title
 
 block title
-  if config.title
-    if config.subtitle
-      title= config.title + " | " + config.subtitle
-     else
-      title= config.title
-  else
-    title= ""
+  title= (config.title ? (config.subtitle ? config.title + " | " + config.subtitle : config.title) : "")
 
 block main
 
