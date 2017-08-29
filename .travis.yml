@@ -20,11 +20,15 @@ script:
 - cd ../..
 - hexo generate
 
+before_deploy:
+- sed -i'' "/^ *repo/s~github\.com~${GH_TOKEN}@github.com~" _config.yml
+- git config --global user.name "Mark Wallace"
+- git config --global user.email "lotabout@gmail.com"
+
 deploy:
-  provider: pages
+  provider: script
   skip_cleanup: true
-  github_token: ${GH_TOKEN}
-  local_dir: public
+  script: hexo deploy --silent
   on:
     branch: master
 
