@@ -119,3 +119,5 @@ You can control the abstract of a post shown at index, by:
 1. Filling a `description:` item in `front-matter` of the `post.md`
 2. Just inserting a `<!--more-->` before your hidden content.
 3. Otherwise it will fetch the first paragraph as excerpt.
+
+
