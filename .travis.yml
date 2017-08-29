@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-- '6.0.0'
+- 6.0.0
 branches:
   only:
   - master
@@ -19,19 +19,13 @@ script:
 - git reset --hard origin/master
 - cd ../..
 - hexo generate
-
-before_deploy:
-- sed -i'' "/^ *repo/s~github\.com~${GH_TOKEN}@github.com~" _config.yml
-- git config --global user.name "Mark Wallace"
-- git config --global user.email "lotabout@gmail.com"
-
 deploy:
-  provider: script
+  provider: pages
   skip_cleanup: true
-  script: hexo deploy --silent
+  github_token: "${GH_TOKEN}"
+  local_dir: public
   on:
     branch: master
-
 env:
   global:
-    secure: KUGEVht64ZtiWawczc88iFkfIrbE2Wfe/M6MLPzi3jNYp7ogwG9JOWXkSvrNJlqSv+/9nQXU+DHcUHZ92Vjy34KK3l+p6MePT+Vy1FJ76nsqHQomgEJlA4H98gJMXpO3ix8DvUkJxknpahMFEJw6wVKFUkTg6tYvZPaqAsZpFlHdryXxQ497vpyKTLfAmMBTp00K6ubJny2jbMjylnEhhIFaBddRcA061xtIyMa2IZu6EHp4hwdWrVWxZ+Bhe0wZHvnfMKVsF3fC0yV1FXt8fXRkjXDqIMEDiFeSgs+QTgAMojdg5vG0bSB4Zoq26r+YUDYUv3hcYCjnmA/YAylHAYzNgb9xShIvQ5bw62J3DCHc5X0fo9waedV045Aw3jkCUAwQbVRXRNhYQbDoH/2Vkm1KkpA75j0DPnndAJ0Gd5cK8YDv65xopbKT/lwrLE1lLqiX2vNctuSvoXTr9ewkosiTQ6QdljNAoLGKfFzyWT9OJ5hDie1M7BtZ6c9aoXYTQmfBhRstYHWVB/BH0VNeufzT6ktcAzIvZESxBettupU5Zl1iqXkApShqCKYJRPTJkh+J3Xo7CvoxHZeLMdKhSXKLM6XL8Y9HWuYP+kVh/w6YkMUU7F/xexdPEFGOymuf8BAmrhqI4y5TL0N6fqmpujliEbD5p0eSBwtnf3l+2uw=
+    secure: ZVyyEZO+8qfwgKTOq0wDvJG3GUmL3k7NJxXG20UONpbF+01CJAe8Lq4FddX+zh7jyXqGZhdeQYj6gmy1eWU8gbYpahtA2ohvxbCyyVioUTxPOm9yZAt5IqXM1Vems8vvS6eTR5huij0T6gt4BzHHy1szrXl55g6ho+wC5N3GCxwxh23GZhGK10HZcVRj9sgCWlOeEMDneuZUfLa20qLcn4tdEzD5iL2A/mNsH1aFqPvm/7F8da22UiEZkp+/PfO9hawraS8ydD3DAINWlya69WnPM8rewPTgdFl+4n11YNFgmXxLF8//ioyOExGRRu70ZyfVXGyxj7yllZqRXle7NNbYGnLbDNYKNMwGIEOYzAzRWDpi+g7AafKIEm/sgiOjjRta4hLRzK/5csfFqdi1LC9fm3GA8+GFAQpCuRAenPyXw6glObKXtTfVm6leZAuC1mo61qu4HGCyJZMObFyD97vY+SQnTmxPp0Cvu7NW9HFe5o4mxHDwhJH5HkjMy9m6sym6qQWbKNKoiqj06SAdNC84uu8vSnwxgZVtFEdgYGOucE6tJNa4CmQXSaU7v/ry3kqK9zrl3/YnbvooSKHzZ40MVm+D+JlIT1OI16chr35imw9XRCXPYjvP8i67PdrU3zX+SqKC0UFW2NPAct1we7DCPOCqpGj6GxL99w7x6es=
