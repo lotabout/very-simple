@@ -19,3 +19,10 @@ duoshuo: #duoshuo_shortname
 disqus: #disqus _shortname
 google_analytics: #Google Analytics Tracking Code
 google_adsense_page_level_ads: #Google Adsense Page Level Ads Code
+valine:
+  enable: #(true/false)
+  appID: #填写 Leancloud 的 appKey
+  appKey: #填写 Leancloud 的 appKey
+  notify: #回复提醒(true/false)
+  verify: #评论验证码(true/false)
+  placeholder: #评论框占位文本

@@ -26,3 +26,26 @@ if theme.disqus
   | </script>
   | <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   | <a href="http://disqus.com" class="dsq-brlink">Blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+if theme.valine.enable
+  .comment
+  | <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  | <script src="//cdn.jsdelivr.net/npm/valine@1.1.6/dist/Valine.min.js"></script>
+  | <script type="text/javascript">
+  | var leancloud_appid = '#{theme.valine.appID}';
+  | var leancloud_appkey = '#{theme.valine.appKey}';
+  | var valine_url = '#{page.permalink}';
+  | var valine_notify = #{theme.valine.notify};
+  | var valine_verify = #{theme.valine.verify};
+  | var valine_placeholder = '#{theme.valine.placeholder}';
+  | new Valine({
+  |          av: AV, // source from av-min.js
+  |          el: '.comment' ,
+  |          notify: valine_notify,
+  |          verify: valine_verify,
+  |          app_id: leancloud_appid,
+  |          app_key: leancloud_appkey,
+  |          placeholder: valine_placeholder,
+  |          path: valine_url
+  |      });
+  | </script>
