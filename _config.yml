@@ -19,3 +19,10 @@ duoshuo: #duoshuo_shortname
 disqus: #disqus _shortname
 google_analytics: #Google Analytics Tracking Code
 google_adsense_page_level_ads: #Google Adsense Page Level Ads Code
+valine:
+  enable: # set to true if you want to use it
+  appID: # Leancloud appID
+  appKey: # Leancloud appKey
+  notify: # notify when getting replies(true/false)
+  verify: # captcha when post a comment(true/false)
+  placeholder: # placeholder text
