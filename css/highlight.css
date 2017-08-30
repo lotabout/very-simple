@@ -1,0 +1,164 @@
+.clearfix::after, article .highlight figcaption::after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.code-block, article pre, article .highlight {
+  background: #2d2d2d;
+  margin: 2ex 0;
+  padding: 1rem 1em;
+  border-style: solid;
+  border-color: #333;
+  border: 1px 0;
+  border-radius: 2px;
+  overflow: auto;
+  color: #cccccc;
+  font-size: 16px;
+  line-height: 1.6em; }
+
+.line-numbers, article .highlight .gutter pre, article .gist-not-used .gist-file .gist-data .line-numbers {
+  color: #666;
+  font-size: 16px; }
+
+article pre, article code {
+  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace; }
+
+article code {
+  background: white;
+  text-shadow: 0 1px #fff;
+  padding: 0 0.3rem; }
+
+article pre code {
+  background: none;
+  text-shadow: none;
+  padding: 0; }
+
+article .highlight pre {
+  border: none;
+  margin: 0;
+  padding: 0; }
+
+article .highlight table {
+  margin: 0;
+  width: auto; }
+
+article .highlight td {
+  border: none;
+  padding: 0; }
+
+article .highlight figcaption {
+  font-size: 0.85em;
+  color: #999999;
+  line-height: 1em;
+  margin-bottom: 1em; }
+
+article .highlight a {
+  color: #66cccc !important;
+  text-decoration: none;
+  float: right; }
+  article .highlight a:hover {
+    color: #6699cc !important; }
+
+article .highlight .gutter pre {
+  text-align: right;
+  padding-right: 20px; }
+
+article .highlight .line {
+  height: 1.6em; }
+
+article .gist-not-used {
+  margin: 0;
+  border-style: solid;
+  border-color: #CCC;
+  border-width: 1px 0;
+  background: #2d2d2d;
+  padding: 1em 1em 1em 2px; }
+  article .gist-not-used .gist-file {
+    border: none;
+    font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+    margin: 0; }
+    article .gist-not-used .gist-file .gist-data {
+      background: none;
+      border: none; }
+      article .gist-not-used .gist-file .gist-data .highlight .gutter pre, article .highlight .gutter .gist-not-used .gist-file .gist-data pre, article .gist-not-used .gist-file .gist-data .line-numbers {
+        background: none;
+        border: none;
+        padding: 0 20px 0 0; }
+      article .gist-not-used .gist-file .gist-data .line-data {
+        padding: 0 !important; }
+    article .gist-not-used .gist-file .highlight {
+      margin: 0;
+      padding: 0;
+      border: none; }
+    article .gist-not-used .gist-file .gist-meta {
+      background: #2d2d2d;
+      color: #999999;
+      font: 0.85em "Helvetica Neue", Helvetica, Arial, sans-serif;
+      text-shadow: 0 0;
+      padding: 0;
+      margin-top: 1em;
+      margin-left: 1em; }
+    article .gist-not-used .gist-file a {
+      color: blue;
+      font-weight: normal; }
+      article .gist-not-used .gist-file a:hover {
+        text-decoration: underline; }
+
+article iframe {
+  border: 1px solid #CCC; }
+
+pre .comment,
+pre .title {
+  color: #999999; }
+
+pre .variable,
+pre .attribute,
+pre .tag,
+pre .regexp,
+pre .ruby .constant,
+pre .xml .tag .title,
+pre .xml .pi,
+pre .xml .doctype,
+pre .html .doctype,
+pre .css .id,
+pre .css .class,
+pre .css .pseudo {
+  color: #f2777a; }
+
+pre .number,
+pre .preprocessor,
+pre .built_in,
+pre .literal,
+pre .params,
+pre .constant {
+  color: #f99157; }
+
+pre .class,
+pre .ruby .class .title,
+pre .css .rules .attribute {
+  color: #99cc99; }
+
+pre .string,
+pre .value,
+pre .inheritance,
+pre .header,
+pre .ruby .symbol,
+pre .xml .cdata {
+  color: #99cc99; }
+
+pre .css .hexcolor {
+  color: #66cccc; }
+
+pre .function,
+pre .python .decorator,
+pre .python .title,
+pre .ruby .function .title,
+pre .ruby .title .keyword,
+pre .perl .sub,
+pre .javascript .title,
+pre .coffeescript .title {
+  color: #6699cc; }
+
+pre .keyword,
+pre .javascript .function {
+  color: #cc99cc; }
