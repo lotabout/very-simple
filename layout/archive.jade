@@ -30,13 +30,26 @@ block main
                       span= tag.length
 
         .post-archive
-            //Use lodash to classify posts. See https://lodash.com/docs#groupBy
-            each posts, year in _.groupBy(page.posts.toArray(), function(p){return -p.date.format('YYYY')})
-              h2= -year
-              ul.listing
-                for post in posts
-                  li
-                    span.date= post.date.format('YYYY/MM/DD')
-                    a(href=url_for(post.path), title=post.title)
-                      = post.title
+          -
+            function groupBy(collection, keyFunc) {
+              var result = {};
+              collection.forEach(function(x) {
+                  var key = keyFunc(x);
+                  if (hasOwnProperty.call(result, key)) {
+                    result[key].push(x);
+                  } else {
+                    result[key] = [x];
+                  }
+              });
+              return result;
+            }
+
+          each posts, year in groupBy(page.posts.toArray(), function(p){return -p.date.format('YYYY')})
+            h2= -year
+            ul.listing
+              for post in posts
+                li
+                  span.date= post.date.format('YYYY/MM/DD')
+                  a(href=url_for(post.path), title=post.title)
+                    = post.title
   include _partial/paginator.jade
